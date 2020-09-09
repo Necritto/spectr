@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./Navbar.module.scss";
 
 import { NavbarItem } from "./NavbarItem/NavbarItem";
+import classnames from "classnames";
 
 type Node = {
   id: number;
@@ -185,7 +186,9 @@ export const Navbar = () => {
       <ul className={classes["outer-menu"]}>
         {data.nodes.map((node) => (
           <li
-            className={classes.menu__item}
+            className={classnames(classes.menu__item, {
+              [classes["menu__item-add"]]: node.nodes,
+            })}
             key={node.id}
             onClick={() => onClickHandler(!!node.nodes, node.id)}
           >
