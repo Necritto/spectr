@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Modal.module.scss";
 
-import classnames from "classnames";
+import { Button } from "../Button/Button";
 
 type ModalProps = {
   onCancel: () => void;
@@ -61,20 +61,11 @@ export const Modal = ({ onCancel, onSubmit }: ModalProps) => {
               </label>
             </div>
             <div className={classes["form-btn"]}>
-              <div
-                className={classnames(classes.cancel, classes["close-modal"])}
-              >
-                <button type="button" onClick={onCancel}>
-                  Отмена
-                </button>
+              <div className={classes.cancel}>
+                <Button value="Отмена" onClose={onCancel} isCancel />
               </div>
               <div className={classes.submit}>
-                <input
-                  id="submit"
-                  type="submit"
-                  value="Отправить"
-                  onSubmit={onSubmit}
-                />
+                <Button value="Отправить" type="submit" onSubmit={onSubmit} />
               </div>
             </div>
           </form>

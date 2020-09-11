@@ -33,16 +33,13 @@
   }
 
   .modal__heading {
-    button {
+    .close-modal {
       background-color: transparent;
       transform: translateY(-15px);
+      font-size: 24px;
+      cursor: pointer;
+      color: #c9c9c9;
     }
-  }
-
-  button {
-    font-size: 24px;
-    color: #c9c9c9;
-    cursor: pointer;
   }
 
   .modal__heading {
@@ -132,25 +129,17 @@
     justify-content: space-between;
     align-items: center;
 
-    input[type="submit"],
-    button {
-      width: 151px;
+    .submit,
+    .cancel {
       height: 56px;
-      background: #2e2e2e;
-      font-weight: 500;
-      font-size: 15px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #ffffff;
-      cursor: pointer;
+    }
+
+    .submit {
+      width: 151px;
     }
 
     .cancel {
-      button {
-        width: 123px;
-        background: #f6f6f6;
-        color: #2e2e2e;
-      }
+      width: 123px;
     }
   }
 
@@ -206,15 +195,12 @@
       }
 
       .form-btn {
-        input[type="submit"] {
+        .submit {
           width: 284px;
-          height: 56px;
         }
 
         .cancel {
-          button {
-            display: none;
-          }
+          display: none;
         }
       }
     }
