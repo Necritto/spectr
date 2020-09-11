@@ -4,7 +4,11 @@ import classes from "./Additional.module.scss";
 import searchSvg from "../../assets/img/svg/search.svg";
 import envelopeSvg from "../../assets/img/svg/envelope.svg";
 
-export const Additional = () => {
+type AdditionalProps = {
+  onShow: () => void;
+};
+
+export const Additional = ({ onShow }: AdditionalProps) => {
   return (
     <div className={classes.additional}>
       <div className={classes.search}>
@@ -12,7 +16,7 @@ export const Additional = () => {
           <img src={searchSvg} alt="search" />
         </div>
       </div>
-      <div className={classes.envelope}>
+      <div className={classes.envelope} onClick={onShow}>
         <img src={envelopeSvg} alt="envelope" />
       </div>
     </div>
