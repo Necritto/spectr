@@ -1,0 +1,208 @@
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-height: 700px;
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin: 0 auto;
+
+  .modal-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 40px;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 31.104px;
+    line-height: 44px;
+  }
+
+  .modal__heading {
+    .close-modal {
+      background-color: transparent;
+      transform: translateY(-15px);
+      font-size: 24px;
+      cursor: pointer;
+      color: #c9c9c9;
+    }
+  }
+
+  .modal__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  input,
+  textarea {
+    width: 520px;
+    height: 56px;
+    background: #f6f6f6;
+    margin-bottom: 12px;
+    padding: 14px 84px 14px 24px;
+  }
+
+  textarea {
+    resize: none;
+    height: 120px;
+    overflow: auto;
+  }
+
+  .phone {
+    position: relative;
+
+    label::after {
+      content: "*";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: -10px;
+      width: 12px;
+      height: 12px;
+      color: #d83933;
+    }
+  }
+
+  .check {
+    width: 520px;
+    display: flex;
+    margin: 20px 0;
+
+    svg {
+      display: none;
+    }
+
+    input {
+      display: none;
+
+      &:checked + label > svg {
+        display: block;
+        position: absolute;
+        left: -35px;
+        z-index: 10;
+      }
+    }
+
+    label {
+      font-weight: normal;
+      color: #000000;
+      transform: translateY(5px);
+      cursor: pointer;
+      position: relative;
+      margin-left: 40px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -40px;
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-color: #f6f6f6;
+      }
+
+      a {
+        color: #51bfff;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .form-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .submit,
+    .cancel {
+      height: 56px;
+    }
+
+    .submit {
+      width: 151px;
+    }
+
+    .cancel {
+      width: 123px;
+    }
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    font-size: 12.5px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #5c5c5c;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal {
+    width: 324px;
+
+    .modal-wrap {
+      padding: 32px 20px;
+      h2 {
+        font-size: 25.6289px;
+        line-height: 36px;
+      }
+
+      input,
+      textarea {
+        width: 284px;
+        padding: 14px 24px 14px 24px;
+      }
+
+      .check {
+        width: 284px;
+        margin: 10px 0;
+
+        label {
+          margin-left: 40px;
+          max-width: 230px;
+          text-align: left;
+
+          &::after {
+            left: -40px;
+          }
+
+          a {
+            display: block;
+            color: #51bfff;
+            text-decoration: underline;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .form-btn {
+        .submit {
+          width: 284px;
+        }
+
+        .cancel {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -175,6 +175,10 @@ export const Navbar = () => {
     setIsClicked(false);
 
     if (isNodes) {
+      setIsClicked(true);
+    }
+
+    if (displayChild === id) {
       setIsClicked(!isClicked);
     }
 
@@ -190,9 +194,16 @@ export const Navbar = () => {
               [classes["menu__item-add"]]: node.nodes,
             })}
             key={node.id}
-            onClick={() => onClickHandler(!!node.nodes, node.id)}
           >
             <a href={node.route}>{node.title}</a>
+            {node.nodes && (
+              <span
+                onClick={() => onClickHandler(!!node.nodes, node.id)}
+                className={classnames(null, {
+                  [classes.open]: isClicked && displayChild === node.id,
+                })}
+              ></span>
+            )}
             {node.nodes && isClicked && displayChild === node.id && (
               <NavbarItem nodes={node.nodes} />
             )}
