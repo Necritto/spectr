@@ -8,10 +8,13 @@ import { Portal } from "../../utils/Portal/Portal";
 import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
 import { debounce } from "../../utils/helpers/debounce";
+import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
 
 export const Header = () => {
+  const SWAP_HEADING: number = 980;
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
+  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
   const [windowWidth, setWindowWidth] = useState(99999);
 
   useEffect(() => {
@@ -29,24 +32,45 @@ export const Header = () => {
   const toggleShowSearch = (): void => setIsOpenSearch(!isOpenSearch);
   const submitSearchHandler = (): void => setIsOpenSearch(false);
 
+  const showBurgerMenu = (): void => setIsOpenBurgerMenu(true);
+  const closeBurgerMenu = (): void => setIsOpenBurgerMenu(false);
+
   return (
     <header className={classes.header}>
       <div className={classes.container}>
-        <Logo />
-        {isOpenSearch ? (
-          windowWidth <= 980 ? (
-            <Search onClick={submitSearchHandler} isSearchModal />
-          ) : (
-            <Search onClick={submitSearchHandler} />
-          )
+        {windowWidth > SWAP_HEADING ? (
+          <>
+            <Logo />
+            {isOpenSearch ? (
+              <Search onClick={submitSearchHandler} />
+            ) : (
+              <Navbar />
+            )}
+            <Additional
+              onShowModal={showModal}
+              onShowSearch={toggleShowSearch}
+              onShowBurgerMenu={showBurgerMenu}
+              isOpenSearch={isOpenSearch}
+            />
+          </>
         ) : (
-          <Navbar />
+          <>
+            {isOpenSearch && (
+              <Search onClick={submitSearchHandler} isSearchModal />
+            )}
+            {isOpenBurgerMenu && (
+              <BurgerMenu onCloseBurgerMenu={closeBurgerMenu} />
+            )}
+            <Additional
+              onShowModal={showModal}
+              onShowSearch={toggleShowSearch}
+              onShowBurgerMenu={showBurgerMenu}
+              isOpenSearch={isOpenSearch}
+              isBurgerMenu
+            />
+          </>
         )}
-        <Additional
-          onShowModal={showModal}
-          onShowSearch={toggleShowSearch}
-          isOpenSearch={isOpenSearch}
-        />
+
         {isOpenModal && (
           <Portal>
             <Modal onCancel={closeModal} onSubmit={submitModalHandler} />
