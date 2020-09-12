@@ -1,8 +1,16 @@
 import React from "react";
-import { Header } from "./components/Header/Header";
+
+import { Layout } from "./hoc/Layout";
+import { MainPage } from "./pages/MainPage/MainPage";
 
 const App = () => {
-  return <Header />;
+  return (
+    <>
+      <Layout>
+        <MainPage />
+      </Layout>
+    </>
+  );
 };
 
 export default App;
