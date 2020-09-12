@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classes from "./Header.module.scss";
 
 import { Logo } from "../Logo/Logo";
@@ -7,34 +7,37 @@ import { Additional } from "../Additional/Additional";
 import { Portal } from "../../utils/Portal/Portal";
 import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
-import { debounce } from "../../utils/helpers/debounce";
 import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
 
-export const Header = () => {
-  const SWAP_HEADING: number = 980;
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [isOpenSearch, setIsOpenSearch] = useState(false);
-  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(99999);
+type HeaderProps = {
+  SWAP_HEADING: number;
+  isOpenModal: boolean;
+  isOpenSearch: boolean;
+  isOpenBurgerMenu: boolean;
+  windowWidth: number;
+  showModal: () => void;
+  closeModal: () => void;
+  submitModalHandler: () => void;
+  toggleShowSearch: () => void;
+  submitSearchHandler: () => void;
+  showBurgerMenu: () => void;
+  closeBurgerMenu: () => void;
+};
 
-  useEffect(() => {
-    const handleResize = debounce(() => setWindowWidth(window.innerWidth), 300);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const showModal = (): void => setIsOpenModal(true);
-  const closeModal = (): void => setIsOpenModal(false);
-  const submitModalHandler = (): void => setIsOpenModal(false);
-
-  const toggleShowSearch = (): void => setIsOpenSearch(!isOpenSearch);
-  const submitSearchHandler = (): void => setIsOpenSearch(false);
-
-  const showBurgerMenu = (): void => setIsOpenBurgerMenu(true);
-  const closeBurgerMenu = (): void => setIsOpenBurgerMenu(false);
-
+export const Header = ({
+  SWAP_HEADING,
+  isOpenModal,
+  isOpenSearch,
+  isOpenBurgerMenu,
+  windowWidth,
+  showModal,
+  closeModal,
+  submitModalHandler,
+  toggleShowSearch,
+  submitSearchHandler,
+  showBurgerMenu,
+  closeBurgerMenu,
+}: HeaderProps) => {
   return (
     <header className={classes.header}>
       <div className={classes.container}>
