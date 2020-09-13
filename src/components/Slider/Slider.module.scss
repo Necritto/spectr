@@ -30,6 +30,7 @@
   display: flex;
   align-items: center;
   background: url("../../assets/img/svg/polygon.svg") no-repeat;
+  z-index: 1001;
 
   .left,
   .right {

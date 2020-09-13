@@ -9,11 +9,15 @@ type SliderItemProps = {
     title: string;
     body: string;
   };
+  x?: number;
 };
 
-export const SliderItem = ({ data }: SliderItemProps) => {
+export const SliderItem = ({ data, x }: SliderItemProps) => {
   return (
-    <div className={classes.sliderItem}>
+    <div
+      className={classes.sliderItem}
+      style={{ transform: `translateX(${x}vw)` }}
+    >
       <h1>{data.title}</h1>
       <p>{data.body}</p>
       <div className={classes.sliderItem__btn}>

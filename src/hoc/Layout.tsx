@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 
-import { debounce } from "../utils/helpers/debounce";
-
 type LayoutProps = {
   children: React.ReactNode;
+  SWAP_HEADING: number;
+  windowWidth: number;
 };
 
-export const Layout = ({ children }: LayoutProps) => {
-  const SWAP_HEADING: number = 980;
+export const Layout = ({
+  children,
+  SWAP_HEADING,
+  windowWidth,
+}: LayoutProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(99999);
-
-  useEffect(() => {
-    const handleResize = debounce(() => setWindowWidth(window.innerWidth), 300);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const showModal = (): void => setIsOpenModal(true);
   const closeModal = (): void => setIsOpenModal(false);

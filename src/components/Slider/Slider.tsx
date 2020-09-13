@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Slider.module.scss";
 
 import classnames from "classnames";
@@ -6,66 +6,62 @@ import classnames from "classnames";
 import { SliderItem } from "./SliderItem/SliderItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
 
-type Node = {
-  id: number;
-  title: string;
-  body: string;
-};
-
-type SliderDate = {
-  nodes: Array<Node>;
-};
-
-export const Slider = () => {
-  const data: SliderDate = {
-    nodes: [
-      {
-        id: 1,
-        title: "Единственный в России",
-        body:
-          "«Спектр-М» — признанный производитель первоклассных портативных Рамановских экспрессс - анализаторов.",
-      },
-      {
-        id: 2,
-        title: "Вторичный в России",
-        body:
-          "«Спектр-М» — признанный производитель вторичных портативных Рамановских экспрессс - анализаторов.",
-      },
-      {
-        id: 3,
-        title: "Какой-то в России",
-        body:
-          "«Спектр-М» — признанный производитель каких-то портативных Рамановских экспрессс - анализаторов.",
-      },
-    ],
+type SliderProps = {
+  data: {
+    nodes: Array<{
+      id: number;
+      title: string;
+      body: string;
+    }>;
   };
+};
+
+export const Slider = ({ data }: SliderProps) => {
+  const [x, setX] = useState(0);
+  let prettyX: number = (x * -1) / 100;
+
+  const leftSlide = (): void =>
+    x === 0 ? setX(-100 * (data.nodes.length - 1)) : setX(x + 100);
+
+  const rightSlide = (): void =>
+    x === -100 * (data.nodes.length - 1) ? setX(0) : setX(x - 100);
 
   return (
     <div className={classes.slider}>
       <div className={classes.sliderOverlay}>
         <div className={classes["slider-wrap"]}>
           <div className={classnames(classes.arrow, classes["arrow-left"])}>
-            <button className={classes.left}>
+            <button className={classes.left} onClick={leftSlide}>
               <img src={arrowSvg} alt="arrow" />
             </button>
           </div>
           <div className={classes.slider__content}>
             {data.nodes.map((node) => (
-              <SliderItem key={node.id} data={node} />
+              <SliderItem key={node.id} data={node} x={x} />
             ))}
           </div>
           <div className={classnames(classes.arrow, classes["arrow-right"])}>
-            <button className={classes.right}>
+            <button className={classes.right} onClick={rightSlide}>
               <img src={arrowSvg} alt="arrow" />
             </button>
           </div>
         </div>
         <div className={classes.slider__border}>
           <div
-            className={classnames(classes.border, classes["border-active"])}
+            className={classnames(classes.border, {
+              [classes["border-active"]]: prettyX === 0,
+            })}
           />
-          <div className={classes.border} />
-          <div className={classes.border} />
+          <div
+            className={classnames(classes.border, {
+              [classes["border-active"]]: prettyX === 1,
+            })}
+          />
+          <div
+            className={classnames(classes.border, {
+              [classes["border-active"]]: prettyX === 2,
+            })}
+          />
         </div>
       </div>
     </div>
