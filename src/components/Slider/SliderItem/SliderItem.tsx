@@ -9,7 +9,7 @@ type SliderItemProps = {
     title: string;
     body: string;
   };
-  x: number;
+  x?: number;
 };
 
 export const SliderItem = ({ data, x }: SliderItemProps) => {

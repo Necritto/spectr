@@ -9,3 +9,9 @@
   border: 30px solid transparent;
   border-top: 16px solid #ffffff;
 }
+
+@media (max-width: 980px) {
+  .triangle {
+    display: none;
+  }
+}

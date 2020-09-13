@@ -6,40 +6,17 @@ import classnames from "classnames";
 import { SliderItem } from "./SliderItem/SliderItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
 
-type Node = {
-  id: number;
-  title: string;
-  body: string;
-};
-
-type SliderDate = {
-  nodes: Array<Node>;
-};
-
-export const Slider = () => {
-  const data: SliderDate = {
-    nodes: [
-      {
-        id: 1,
-        title: "Единственный в России",
-        body:
-          "«Спектр-М» — признанный производитель первоклассных портативных Рамановских экспрессс - анализаторов.",
-      },
-      {
-        id: 2,
-        title: "Вторичный в России",
-        body:
-          "«Спектр-М» — признанный производитель вторичных портативных Рамановских экспрессс - анализаторов.",
-      },
-      {
-        id: 3,
-        title: "Какой-то в России",
-        body:
-          "«Спектр-М» — признанный производитель каких-то портативных Рамановских экспрессс - анализаторов.",
-      },
-    ],
+type SliderProps = {
+  data: {
+    nodes: Array<{
+      id: number;
+      title: string;
+      body: string;
+    }>;
   };
+};
 
+export const Slider = ({ data }: SliderProps) => {
   const [x, setX] = useState(0);
   let prettyX: number = (x * -1) / 100;
 
