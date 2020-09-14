@@ -10,16 +10,19 @@
 }
 
 .card__img {
-  background-color: #f9f9f9;
+  background: linear-gradient(45deg, #252525, #e7e1e1);
+  min-width: 460px;
+  height: 208px;
 
   img {
-    min-width: 460px;
-    height: 208px;
+    min-width: inherit;
+    height: inherit;
   }
 }
 
 .card__desc {
   padding: 24px;
+  background-color: #ffffff;
 
   h5 {
     font-size: 18px;
@@ -40,9 +43,7 @@
   }
 
   .card__img {
-    img {
-      min-width: 262px;
-    }
+    min-width: 262px;
   }
 }
 
@@ -52,9 +53,7 @@
   }
 
   .card__img {
-    img {
-      min-width: 282px;
-    }
+    min-width: 282px;
   }
 }
 
@@ -64,9 +63,7 @@
   }
 
   .card__img {
-    img {
-      min-width: 344px;
-    }
+    min-width: 344px;
   }
 }
 
@@ -76,8 +73,6 @@
   }
 
   .card__img {
-    img {
-      min-width: 300px;
-    }
+    min-width: 300px;
   }
 }
