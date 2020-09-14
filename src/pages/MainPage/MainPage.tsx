@@ -5,6 +5,7 @@ import { Slider } from "../../components/Slider/Slider";
 import { Info } from "../../components/Info/Info";
 import { Logo } from "../../components/Logo/Logo";
 import { SliderItem } from "../../components/Slider/SliderItem/SliderItem";
+import { Carousel } from "../../components/Carousel/Carousel";
 
 type MainPageProps = {
   SWAP_HEADING: number;
@@ -17,12 +18,12 @@ type Node = {
   body: string;
 };
 
-type SliderDate = {
+type SliderData = {
   nodes: Array<Node>;
 };
 
 export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
-  const data: SliderDate = {
+  const sliderData: SliderData = {
     nodes: [
       {
         id: 1,
@@ -45,20 +46,63 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
     ],
   };
 
+  const carouselData: Array<{
+    id: number;
+    imgUrl: string;
+    title: string;
+    descr: string;
+  }> = [
+    {
+      id: 1,
+      imgUrl: "/src/assets/img/cardImg/img1.png",
+      title: "L405",
+      descr: "Спектрометр комбинационного рассеяния",
+    },
+    {
+      id: 2,
+      imgUrl: "/src/assets/img/cardImg/img2.png",
+      title: "R1064",
+      descr: "Оптоволоконный UV-VIS-NIR спектрометр",
+    },
+    {
+      id: 3,
+      imgUrl: "/src/assets/img/cardImg/img3.png",
+      title: "M532",
+      descr: "Микроскоп комбинационного рассеяния (Раман)",
+    },
+    {
+      id: 4,
+      imgUrl: "/src/assets/img/cardImg/img4.png",
+      title: "L365",
+      descr: "Люминесцентный спектрометр",
+    },
+    {
+      id: 5,
+      imgUrl: "/src/assets/img/cardImg/img5.png",
+      title: "L365",
+      descr: "SERS Подложка",
+    },
+  ];
+
   return (
     <main className={classes.main}>
       <section className={classes["slider-section"]}>
         {windowWidth > SWAP_HEADING ? (
           <>
-            <Slider data={data} />
+            <Slider data={sliderData} />
             <Info />
           </>
         ) : (
           <div className={classes["resize-wrap"]}>
             <Logo />
-            <SliderItem data={data.nodes[0]} />
+            <SliderItem data={sliderData.nodes[0]} />
           </div>
         )}
+      </section>
+      <section className={classes["carousel-section"]}>
+        <div className={classes.container}>
+          <Carousel data={carouselData} />
+        </div>
       </section>
     </main>
   );

@@ -2,9 +2,27 @@
   height: 87vh;
 }
 
+.container {
+  margin: 0 auto;
+}
+
+.carousel-section {
+  overflow: hidden;
+}
+
 @media (min-width: 1600px) {
   .slider-section {
     height: 91vh;
+  }
+
+  .container {
+    max-width: 1520px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
   }
 }
 
@@ -12,6 +30,10 @@
   .slider-section {
     height: 100%;
     background: url("../../assets/img/svg/header-bg.svg") top no-repeat;
+  }
+
+  .container {
+    max-width: 100%;
   }
 
   .resize-wrap {
