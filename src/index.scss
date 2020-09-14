@@ -8,18 +8,34 @@ body {
 }
 
 @media (max-width: 980px) {
-  #root {
-    display: grid;
-    grid-template-areas:
-      "mainArea"
-      "headerArea";
+  header {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    top: 76.5%;
+  }
+}
 
-    header {
-      grid-area: headerArea;
-    }
+@media (max-width: 640px) {
+  header {
+    top: 60.5%;
+  }
+}
 
-    main {
-      grid-area: mainArea;
-    }
+@media (max-width: 530px) {
+  header {
+    top: 64.5%;
+  }
+}
+
+@media (max-width: 460px) {
+  header {
+    top: 70%;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    top: 73.5%;
   }
 }

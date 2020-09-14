@@ -6,6 +6,8 @@ import { Info } from "../../components/Info/Info";
 import { Logo } from "../../components/Logo/Logo";
 import { SliderItem } from "../../components/Slider/SliderItem/SliderItem";
 import { Carousel } from "../../components/Carousel/Carousel";
+import { Button } from "../../components/UI/Button/Button";
+import { News } from "../../components/News/News";
 
 type MainPageProps = {
   SWAP_HEADING: number;
@@ -84,6 +86,51 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
     },
   ];
 
+  const newsData: Array<{
+    id: number;
+    imgUrl: string;
+    date: string;
+    title: string;
+  }> = [
+    {
+      id: 1,
+      imgUrl: "/src/assets/img/newsImg/img1.png",
+      date: "22.06.2015",
+      title: "ИнСпектр на ICAVS 8 2015, Австрия, Вена",
+    },
+    {
+      id: 2,
+      imgUrl: "/src/assets/img/newsImg/img2.png",
+      date: "19.03.2015",
+      title: "XYZ Раман-система для сканирования порошков",
+    },
+    {
+      id: 3,
+      imgUrl: "/src/assets/img/newsImg/img3.png",
+      date: "01.06.2015",
+      title: "EnSpectr на выставке ACHEMA2015 во Франкфурте на Майне, Германия",
+    },
+    {
+      id: 4,
+      imgUrl: "/src/assets/img/newsImg/img4.png",
+      date: "22.02.2015",
+      title:
+        "Программное обеспечение для определения жидкостей в бутылочной емкости ",
+    },
+    {
+      id: 5,
+      imgUrl: "/src/assets/img/newsImg/img5.png",
+      date: "29.05.2015",
+      title: "Учебный UV-VIS-NIR спектрометр ИнСпектр на конференции ФССО2015",
+    },
+    {
+      id: 6,
+      imgUrl: "/src/assets/img/newsImg/img6.png",
+      date: "05.12.2014",
+      title: "Пассивированные SERS подложки уже в продаже!",
+    },
+  ];
+
   return (
     <main className={classes.main}>
       <section className={classes["slider-section"]}>
@@ -102,6 +149,37 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
       <section className={classes["carousel-section"]}>
         <div className={classes.container}>
           <Carousel data={carouselData} />
+        </div>
+      </section>
+      <section className={classes.mission}>
+        <div className={classes.heading}>
+          <h2>
+            Наша <span>миссия</span>
+          </h2>
+        </div>
+        <div className={classes.descr}>
+          <p>
+            Технология, не приносящая пользу обществу, сама по себе бесполезна,
+            поэтому мы стремимся внедрить новейшие технологии в жизнь
+            современного общества.
+          </p>
+          <strong>
+            Мы — коллектив единомышленников, который{" "}
+            <span>разрабатывает, тестирует, производит и поставляет</span>{" "}
+            спектральные анализаторы для высокоточного распознавания различных
+            веществ.
+          </strong>
+        </div>
+      </section>
+      <section className={classes["news-section"]}>
+        <h2>Новости компании</h2>
+        <div className={classes.news__content}>
+          <div className={classes.container}>
+            <News data={newsData} />
+          </div>
+        </div>
+        <div className={classes.news__btn}>
+          <Button value={"Все новости"} />
         </div>
       </section>
     </main>
