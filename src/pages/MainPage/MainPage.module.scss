@@ -8,6 +8,49 @@
 
 .carousel-section {
   overflow: hidden;
+  margin-top: 40px;
+}
+
+.mission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../assets/img/svg/decor_triangles.svg") no-repeat;
+  background-size: cover;
+  color: #000000;
+  padding: 50px 20px 200px 0;
+
+  span {
+    color: #d83933;
+  }
+
+  .heading {
+    h2 {
+      width: 288px;
+      font-weight: bold;
+      font-size: 68px;
+      line-height: 76px;
+      text-align: right;
+      text-transform: uppercase;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .descr {
+    width: 550px;
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 40px;
+    }
+
+    strong {
+      font-weight: 500;
+      font-size: 22.5px;
+      line-height: 36px;
+    }
+  }
 }
 
 @media (min-width: 1600px) {
@@ -51,6 +94,17 @@
       }
     }
   }
+
+  .mission {
+    padding-bottom: 100px;
+
+    .heading {
+      h2 {
+        font-size: 53.7477px;
+        line-height: 64px;
+      }
+    }
+  }
 }
 
 @media (max-width: 640px) {
@@ -61,6 +115,32 @@
       & > img {
         width: 92px;
       }
+    }
+  }
+
+  .mission {
+    flex-direction: column;
+    padding: 0 20px 100px 20px;
+
+    .heading {
+      width: 100%;
+
+      h2 {
+        transform: rotate(0);
+        font-size: 28.8325px;
+        line-height: 36px;
+        width: inherit;
+        text-align: left;
+        margin-bottom: 24px;
+
+        span {
+          color: #000000;
+        }
+      }
+    }
+
+    .descr {
+      width: 100%;
     }
   }
 }

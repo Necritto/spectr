@@ -104,6 +104,26 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
           <Carousel data={carouselData} />
         </div>
       </section>
+      <section className={classes.mission}>
+        <div className={classes.heading}>
+          <h2>
+            Наша <span>миссия</span>
+          </h2>
+        </div>
+        <div className={classes.descr}>
+          <p>
+            Технология, не приносящая пользу обществу, сама по себе бесполезна,
+            поэтому мы стремимся внедрить новейшие технологии в жизнь
+            современного общества.
+          </p>
+          <strong>
+            Мы — коллектив единомышленников, который{" "}
+            <span>разрабатывает, тестирует, производит и поставляет</span>{" "}
+            спектральные анализаторы для высокоточного распознавания различных
+            веществ.
+          </strong>
+        </div>
+      </section>
     </main>
   );
 };
