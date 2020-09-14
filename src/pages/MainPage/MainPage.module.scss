@@ -4,6 +4,7 @@
 
 .container {
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .carousel-section {
@@ -50,6 +51,30 @@
       font-size: 22.5px;
       line-height: 36px;
     }
+  }
+}
+
+.news-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-weight: bold;
+    font-size: 43.9453px;
+    line-height: 56px;
+    text-align: center;
+  }
+
+  .news__content {
+    margin: 80px 0;
+  }
+
+  .news__btn {
+    width: 168px;
+    height: 56px;
+    margin-bottom: 160px;
   }
 }
 
