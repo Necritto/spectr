@@ -130,6 +130,12 @@
       }
     }
   }
+
+  .news-section {
+    .news__btn {
+      margin-bottom: 130px;
+    }
+  }
 }
 
 @media (max-width: 640px) {
@@ -167,5 +173,15 @@
     .descr {
       width: 100%;
     }
+  }
+
+  .news-section {
+    .news__btn {
+      margin-bottom: 90px;
+    }
+  }
+
+  .map-section {
+    display: none;
   }
 }
