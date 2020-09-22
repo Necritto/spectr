@@ -8,6 +8,7 @@ import { SliderItem } from "../../components/Slider/SliderItem/SliderItem";
 import { Carousel } from "../../components/Carousel/Carousel";
 import { Button } from "../../components/UI/Button/Button";
 import { News } from "../../components/News/News";
+import { Map } from "../../components/Map/Map";
 
 type MainPageProps = {
   SWAP_HEADING: number;
@@ -181,6 +182,9 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
         <div className={classes.news__btn}>
           <Button value={"Все новости"} />
         </div>
+      </section>
+      <section className={classes["map-section"]}>
+        <Map />
       </section>
     </main>
   );
