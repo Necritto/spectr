@@ -5,37 +5,25 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 @media (max-width: 980px) {
   header {
     position: absolute;
     width: 100%;
-    z-index: 1000;
-    top: 76.5%;
+    top: 17%;
   }
 }
 
 @media (max-width: 640px) {
   header {
-    top: 60.5%;
+    top: 12.5%;
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 450px) {
   header {
-    top: 64.5%;
-  }
-}
-
-@media (max-width: 460px) {
-  header {
-    top: 70%;
-  }
-}
-
-@media (max-width: 400px) {
-  header {
-    top: 73.5%;
+    top: 13.5%;
   }
 }

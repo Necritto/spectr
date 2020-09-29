@@ -28,6 +28,12 @@ export const Layout = ({
   const showBurgerMenu = (): void => setIsOpenBurgerMenu(true);
   const closeBurgerMenu = (): void => setIsOpenBurgerMenu(false);
 
+  isOpenModal ||
+  (isOpenSearch && windowWidth <= SWAP_HEADING) ||
+  isOpenBurgerMenu
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "visible");
+
   return (
     <>
       <Header
