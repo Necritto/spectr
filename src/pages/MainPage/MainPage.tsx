@@ -9,11 +9,7 @@ import { Carousel } from "../../components/Carousel/Carousel";
 import { Button } from "../../components/UI/Button/Button";
 import { News } from "../../components/News/News";
 import { Map } from "../../components/Map/Map";
-
-type MainPageProps = {
-  SWAP_HEADING: number;
-  windowWidth: number;
-};
+import { ISwapHeading } from "../../App";
 
 type Node = {
   id: number;
@@ -25,7 +21,7 @@ type SliderData = {
   nodes: Array<Node>;
 };
 
-export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
+export const MainPage = ({ SWAP_HEADING, windowWidth }: ISwapHeading) => {
   const sliderData: SliderData = {
     nodes: [
       {

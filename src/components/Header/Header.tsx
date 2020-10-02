@@ -8,13 +8,12 @@ import { Portal } from "../../utils/Portal/Portal";
 import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
 import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
+import { ISwapHeading } from "../../App";
 
-type HeaderProps = {
-  SWAP_HEADING: number;
+interface HeaderProps extends ISwapHeading {
   isOpenModal: boolean;
   isOpenSearch: boolean;
   isOpenBurgerMenu: boolean;
-  windowWidth: number;
   showModal: () => void;
   closeModal: () => void;
   submitModalHandler: () => void;
@@ -22,7 +21,7 @@ type HeaderProps = {
   submitSearchHandler: () => void;
   showBurgerMenu: () => void;
   closeBurgerMenu: () => void;
-};
+}
 
 export const Header = ({
   SWAP_HEADING,
