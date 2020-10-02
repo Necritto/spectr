@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import { Layout } from "./hoc/Layout";
 import { MainPage } from "./pages/MainPage/MainPage";
+import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { debounce } from "./utils/helpers/debounce";
 
@@ -40,7 +41,13 @@ const App = () => {
           <ProductPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
-      <Redirect to="/main" />
+      <Route
+        path="/404"
+        render={() => (
+          <NotFound SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
+        )}
+      />
+      <Redirect to="/404" />
     </Switch>
   );
 
