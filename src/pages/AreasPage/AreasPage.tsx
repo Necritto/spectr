@@ -3,7 +3,7 @@ import classes from "./AreasPage.module.scss";
 
 import { ISwapHeading } from "../../App";
 import { AreasItem } from "./AreasItem/AreasItem";
-import { Logo } from "../../components/Logo/Logo";
+import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 
 export const AreasPage = ({
   SWAP_HEADING,
@@ -79,14 +79,7 @@ export const AreasPage = ({
 
   return (
     <main className={classes.main}>
-      {windowWidth < SWAP_HEADING && (
-        <>
-          <section className={classes["product-logo"]}>
-            <div className={classes.bg}></div>
-            <Logo />
-          </section>
-        </>
-      )}
+      {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes.areas}>
         <div className={classes.container}>
           <h1>Области применения</h1>
