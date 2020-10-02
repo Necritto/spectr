@@ -1,69 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Pagination.module.scss";
+
+import chunk from "lodash/chunk";
 
 import { PaginationItem } from "./PaginationItem/PaginationItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
 
-export const Pagination: React.FC = (): React.ReactElement => {
-  const data: Array<{
-    id: number;
-    imgUrl: string;
-    title: string;
-    descr: string;
-  }> = [
-    {
-      id: 1,
-      imgUrl: "/src/assets/img/cardImg/img1.png",
-      title: "L405",
-      descr: "Спектрометр комбинационного рассеяния",
-    },
-    {
-      id: 2,
-      imgUrl: "/src/assets/img/cardImg/img2.png",
-      title: "R1064",
-      descr: "Оптоволоконный UV-VIS-NIR спектрометр",
-    },
-    {
-      id: 3,
-      imgUrl: "/src/assets/img/cardImg/img3.png",
-      title: "M532",
-      descr: "Микроскоп комбинационного рассеяния (Раман)",
-    },
-    {
-      id: 4,
-      imgUrl: "/src/assets/img/cardImg/img4.png",
-      title: "L365",
-      descr: "Люминесцентный спектрометр",
-    },
-    {
-      id: 5,
-      imgUrl: "/src/assets/img/cardImg/img5.png",
-      title: "L365",
-      descr: "SERS Подложка",
-    },
+type DataType = {
+  id: number;
+  imgUrl: string;
+  title: string;
+  descr: string;
+};
+
+type PaginationProps = {
+  data: Array<DataType>;
+};
+
+export const Pagination = ({ data }: PaginationProps): React.ReactElement => {
+  let [currentPage, setCurrentPage] = useState(0);
+  const productOnPage: number = 6;
+  const numberOfPages: number = Math.ceil(data.length / productOnPage);
+
+  const displayedData: Array<DataType> = chunk(data, productOnPage)[
+    currentPage
   ];
+
+  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (e.currentTarget.id === "left" && currentPage > 0) {
+      setCurrentPage(--currentPage);
+    }
+
+    if (e.currentTarget.id === "right" && currentPage < numberOfPages - 1) {
+      setCurrentPage(++currentPage);
+    }
+  };
 
   return (
     <div className={classes.pagination}>
       <div className={classes.content}>
-        {data.map((pageData) => (
+        {displayedData.map((pageData) => (
           <PaginationItem key={pageData.id} pageData={pageData} />
         ))}
       </div>
       <div className={classes.btns}>
         <div className={classes.arrow}>
-          <button className={classes.left}>
+          <button
+            onClick={(e) => onClickHandler(e)}
+            id="left"
+            className={classes.left}
+          >
             <img src={arrowSvg} alt="arrow" />
           </button>
         </div>
         <div className={classes.btn__pages}>
-          <div className={classes.active__pages}>
-            <button className={classes.active}>1</button>
-          </div>
-          <span> из 16</span>
+          <span className={classes.active__pages}>{currentPage + 1}</span>
+          <span> из {numberOfPages}</span>
         </div>
         <div className={classes.arrow}>
-          <button className={classes.right}>
+          <button
+            onClick={(e) => onClickHandler(e)}
+            id="right"
+            className={classes.right}
+          >
             <img src={arrowSvg} alt="arrow" />
           </button>
         </div>
