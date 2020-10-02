@@ -2,12 +2,11 @@ import React, { useState } from "react";
 
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
+import { ISwapHeading } from "../App";
 
-type LayoutProps = {
+interface LayoutProps extends ISwapHeading {
   children: React.ReactNode;
-  SWAP_HEADING: number;
-  windowWidth: number;
-};
+}
 
 export const Layout = ({
   children,
