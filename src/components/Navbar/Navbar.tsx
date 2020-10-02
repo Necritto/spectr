@@ -3,6 +3,7 @@ import classes from "./Navbar.module.scss";
 
 import { NavbarItem } from "./NavbarItem/NavbarItem";
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 type Node = {
   id: number;
@@ -195,7 +196,7 @@ export const Navbar = () => {
             })}
             key={node.id}
           >
-            <a href={node.route}>{node.title}</a>
+            <Link to={node.route}>{node.title}</Link>
             {node.nodes && (
               <span
                 onClick={() => onClickHandler(!!node.nodes, node.id)}

@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./BurgerMenu.module.scss";
 
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 import { Nodes } from "../../Navbar/Navbar";
 import { Button } from "../Button/Button";
@@ -55,7 +56,7 @@ export const BurgerMenu = ({ onCloseBurgerMenu }: BurgerMenuProps) => {
               key={node.id}
               className={classnames({ [classes.active]: node.id === 1 })}
             >
-              <a href={node.route}>{node.title}</a>
+              <Link to={node.route}>{node.title}</Link>
             </li>
           ))}
         </ul>
