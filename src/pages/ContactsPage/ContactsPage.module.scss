@@ -1,0 +1,87 @@
+.main {
+  background: url("../../assets/img/svg/decor_triangles.svg") no-repeat top;
+  background-size: contain;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+
+  h1 {
+    font-weight: bold;
+    font-size: 54.9414px;
+    line-height: 64px;
+    margin: 40px 0;
+  }
+
+  p,
+  a {
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 40px;
+  }
+
+  a {
+    max-width: max-content;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    &:first-of-type {
+      text-decoration: underline;
+      color: #0076d6;
+    }
+  }
+
+  .contact__btn {
+    margin: 0 auto;
+    width: 190px;
+    height: 56px;
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .contacts {
+    .contact__btn {
+      margin-bottom: 65px;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .main {
+    background: none;
+  }
+
+  .contacts {
+    h1 {
+      font-size: 32.4348px;
+      line-height: 40px;
+      margin: 24px 0;
+    }
+
+    p,
+    a {
+      margin-bottom: 24px;
+    }
+
+    a {
+      margin-bottom: 24px;
+    }
+
+    .contact__btn {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .contacts {
+    .contact__btn {
+      width: 300px;
+    }
+  }
+}

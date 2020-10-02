@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import { Layout } from "./hoc/Layout";
 import { AreasPage } from "./pages/AreasPage/AreasPage";
+import { ContactsPage } from "./pages/ContactsPage/ContactsPage";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { NotFound } from "./pages/NotFound/NotFound";
@@ -60,6 +61,12 @@ const App = () => {
         path="/team"
         render={() => (
           <TeamPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
+        )}
+      />
+      <Route
+        path="/contacts"
+        render={() => (
+          <ContactsPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
