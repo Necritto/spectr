@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Layout } from "./hoc/Layout";
 import { AreasPage } from "./pages/AreasPage/AreasPage";
 import { MainPage } from "./pages/MainPage/MainPage";
+import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { debounce } from "./utils/helpers/debounce";
@@ -46,6 +47,12 @@ const App = () => {
         path="/areas"
         render={() => (
           <AreasPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
+        )}
+      />
+      <Route
+        path="/news"
+        render={() => (
+          <NewsPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
