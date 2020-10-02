@@ -74,12 +74,16 @@
 
   .btns {
     margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 50px;
   }
 }
 
 @media (max-width: 640px) {
   .content {
     justify-content: center;
+  }
+
+  .btns {
+    margin-bottom: 20px;
   }
 }

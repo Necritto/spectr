@@ -28,28 +28,6 @@
 }
 
 @media (max-width: 980px) {
-  .product-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-bottom: 48px;
-
-    .bg {
-      position: absolute;
-      background: url("../../assets/img/svg/header-bg.svg") no-repeat center top;
-      width: 100vw;
-      height: 55vh;
-      z-index: -1;
-      top: 0;
-    }
-
-    img {
-      padding-top: 48px;
-      width: 170px;
-    }
-  }
-
   .not-found {
     background: none;
     transform: translateY(-5%);
@@ -62,13 +40,6 @@
 }
 
 @media (max-width: 640px) {
-  .product-logo {
-    img {
-      width: 90px;
-      padding-top: 24px;
-    }
-  }
-
   .not-found {
     transform: translateY(-5%);
   }

@@ -10,14 +10,19 @@ type DataType = {
   id: number;
   imgUrl: string;
   title: string;
-  descr: string;
+  descr?: string;
+  date?: string;
 };
 
 type PaginationProps = {
   data: Array<DataType>;
+  isNews?: boolean;
 };
 
-export const Pagination = ({ data }: PaginationProps): React.ReactElement => {
+export const Pagination = ({
+  data,
+  isNews,
+}: PaginationProps): React.ReactElement => {
   let [currentPage, setCurrentPage] = useState(0);
   const productOnPage: number = 6;
   const numberOfPages: number = Math.ceil(data.length / productOnPage);
@@ -40,7 +45,11 @@ export const Pagination = ({ data }: PaginationProps): React.ReactElement => {
     <div className={classes.pagination}>
       <div className={classes.content}>
         {displayedData.map((pageData) => (
-          <PaginationItem key={pageData.id} pageData={pageData} />
+          <PaginationItem
+            key={pageData.id}
+            pageData={pageData}
+            isNews={isNews}
+          />
         ))}
       </div>
       <div className={classes.btns}>

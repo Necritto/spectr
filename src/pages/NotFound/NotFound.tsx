@@ -2,19 +2,15 @@ import React from "react";
 import classes from "./NotFound.module.scss";
 
 import { ISwapHeading } from "../../App";
-import { Logo } from "../../components/Logo/Logo";
+import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 
-export const NotFound = ({ SWAP_HEADING, windowWidth }: ISwapHeading) => {
+export const NotFound = ({
+  SWAP_HEADING,
+  windowWidth,
+}: ISwapHeading): React.ReactElement => {
   return (
     <main className={classes.main}>
-      {windowWidth < SWAP_HEADING && (
-        <>
-          <section className={classes["product-logo"]}>
-            <div className={classes.bg}></div>
-            <Logo />
-          </section>
-        </>
-      )}
+      {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes["not-found"]}>
         <h1>Такой страницы нет</h1>
         <p>
