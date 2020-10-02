@@ -57,31 +57,31 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
   }> = [
     {
       id: 1,
-      imgUrl: "/src/assets/img/cardImg/img1.png",
+      imgUrl: "img/cardImg/img1.png",
       title: "L405",
       descr: "Спектрометр комбинационного рассеяния",
     },
     {
       id: 2,
-      imgUrl: "/src/assets/img/cardImg/img2.png",
+      imgUrl: "img/cardImg/img2.png",
       title: "R1064",
       descr: "Оптоволоконный UV-VIS-NIR спектрометр",
     },
     {
       id: 3,
-      imgUrl: "/src/assets/img/cardImg/img3.png",
+      imgUrl: "img/cardImg/img3.png",
       title: "M532",
       descr: "Микроскоп комбинационного рассеяния (Раман)",
     },
     {
       id: 4,
-      imgUrl: "/src/assets/img/cardImg/img4.png",
+      imgUrl: "img/cardImg/img4.png",
       title: "L365",
       descr: "Люминесцентный спектрометр",
     },
     {
       id: 5,
-      imgUrl: "/src/assets/img/cardImg/img5.png",
+      imgUrl: "img/cardImg/img5.png",
       title: "L365",
       descr: "SERS Подложка",
     },
@@ -95,38 +95,38 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: MainPageProps) => {
   }> = [
     {
       id: 1,
-      imgUrl: "/src/assets/img/newsImg/img1.png",
+      imgUrl: "img/newsImg/img1.png",
       date: "22.06.2015",
       title: "ИнСпектр на ICAVS 8 2015, Австрия, Вена",
     },
     {
       id: 2,
-      imgUrl: "/src/assets/img/newsImg/img2.png",
+      imgUrl: "img/newsImg/img2.png",
       date: "19.03.2015",
       title: "XYZ Раман-система для сканирования порошков",
     },
     {
       id: 3,
-      imgUrl: "/src/assets/img/newsImg/img3.png",
+      imgUrl: "img/newsImg/img3.png",
       date: "01.06.2015",
       title: "EnSpectr на выставке ACHEMA2015 во Франкфурте на Майне, Германия",
     },
     {
       id: 4,
-      imgUrl: "/src/assets/img/newsImg/img4.png",
+      imgUrl: "img/newsImg/img4.png",
       date: "22.02.2015",
       title:
         "Программное обеспечение для определения жидкостей в бутылочной емкости ",
     },
     {
       id: 5,
-      imgUrl: "/src/assets/img/newsImg/img5.png",
+      imgUrl: "img/newsImg/img5.png",
       date: "29.05.2015",
       title: "Учебный UV-VIS-NIR спектрометр ИнСпектр на конференции ФССО2015",
     },
     {
       id: 6,
-      imgUrl: "/src/assets/img/newsImg/img6.png",
+      imgUrl: "img/newsImg/img6.png",
       date: "05.12.2014",
       title: "Пассивированные SERS подложки уже в продаже!",
     },
