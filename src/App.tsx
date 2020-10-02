@@ -8,6 +8,7 @@ import { MainPage } from "./pages/MainPage/MainPage";
 import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
+import { TeamPage } from "./pages/TeamPage/TeamPage";
 import { debounce } from "./utils/helpers/debounce";
 
 export interface ISwapHeading {
@@ -53,6 +54,12 @@ const App = () => {
         path="/news"
         render={() => (
           <NewsPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
+        )}
+      />
+      <Route
+        path="/team"
+        render={() => (
+          <TeamPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
