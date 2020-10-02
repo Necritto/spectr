@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import { Layout } from "./hoc/Layout";
+import { AreasPage } from "./pages/AreasPage/AreasPage";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
@@ -39,6 +40,12 @@ const App = () => {
         path="/products"
         render={() => (
           <ProductPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
+        )}
+      />
+      <Route
+        path="/areas"
+        render={() => (
+          <AreasPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
