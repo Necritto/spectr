@@ -3,7 +3,7 @@ import classes from "./ProductPage.module.scss";
 
 import { Pagination } from "../../components/Pagination/Pagination";
 import { ISwapHeading } from "../../App";
-import { Logo } from "../../components/Logo/Logo";
+import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 
 type productsType = {
   id: number;
@@ -141,14 +141,7 @@ export const ProductPage = ({
 
   return (
     <main className={classes.main}>
-      {windowWidth < SWAP_HEADING && (
-        <>
-          <section className={classes["product-logo"]}>
-            <div className={classes.bg}></div>
-            <Logo />
-          </section>
-        </>
-      )}
+      {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes.products}>
         <div className={classes.container}>
           <div className={classes.heading}>
