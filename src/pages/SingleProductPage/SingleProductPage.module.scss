@@ -1,0 +1,305 @@
+.header {
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  position: relative;
+  z-index: 10;
+
+  h1 {
+    font-weight: bold;
+    font-size: 44.7898px;
+    line-height: 52px;
+
+    span {
+      color: #d83933;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 24px 0 40px 0;
+  }
+
+  .heading__btn {
+    width: 140px;
+    height: 56px;
+  }
+}
+
+.header__img {
+  position: relative;
+
+  .mask {
+    background-color: #f9f9f9;
+    position: absolute;
+    left: -90%;
+    width: 100%;
+    height: 100%;
+    transform: skew(-10deg);
+  }
+
+  img {
+    width: inherit;
+  }
+}
+
+.content {
+  margin: 80px 0;
+}
+
+.content-wrap {
+  display: flex;
+
+  aside {
+    margin-right: 80px;
+
+    .back__btn {
+      width: 198px;
+      height: 56px;
+    }
+
+    nav {
+      margin: 32px 0;
+
+      li {
+        margin-bottom: 20px;
+        display: flex;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-weight: bold;
+        font-size: 12.5px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        margin-right: 8px;
+      }
+
+      a {
+        font-size: 18px;
+        line-height: 28px;
+        text-decoration: underline;
+        color: #000000;
+      }
+    }
+
+    .buy__btn {
+      width: 139px;
+      height: 56px;
+    }
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 65%;
+
+  section {
+    margin-bottom: 64px;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 37.3248px;
+    line-height: 48px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.description {
+  p {
+    &:nth-of-type(n) {
+      margin-bottom: 35px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.youtube {
+  margin-top: 64px;
+  max-width: 640px;
+
+  iframe {
+    width: 100%;
+    height: 360px;
+  }
+}
+
+.features,
+.advantages {
+  p {
+    span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background-color: #d83933;
+      margin-right: 20px;
+      transform: translateY(-2px);
+    }
+
+    &:nth-of-type(n) {
+      margin-bottom: 20px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.area-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  button {
+    flex-basis: 48.5%;
+  }
+}
+
+.docs__item {
+  display: flex;
+  margin-bottom: 24px;
+
+  img {
+    margin-right: 20px;
+  }
+
+  a {
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: underline;
+    color: #0076d6;
+  }
+}
+
+.docs__img {
+  margin-top: 40px;
+
+  img {
+    object-fit: contain;
+    margin: 0 24px 24px 0;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .container {
+    max-width: 1120px;
+  }
+}
+
+@media (max-width: 980px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .header {
+    background: none;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 90px;
+
+    h1 {
+      font-size: 32.4348px;
+      line-height: 40px;
+    }
+  }
+
+  .header__img {
+    display: none;
+  }
+
+  .content-wrap {
+    justify-content: center;
+
+    aside {
+      display: none;
+    }
+  }
+
+  .article {
+    flex-basis: 100%;
+
+    h2 {
+      font-size: 28.8325px;
+      line-height: 36px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .heading {
+    margin-bottom: 48px;
+  }
+
+  .youtube {
+    iframe {
+      max-height: 168px;
+    }
+  }
+
+  .area-wrap {
+    justify-content: center;
+    flex-wrap: wrap;
+
+    button {
+      flex-basis: 100%;
+    }
+  }
+
+  .docs__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin: 0 0 24px 0;
+    }
+  }
+}

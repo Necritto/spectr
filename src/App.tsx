@@ -10,6 +10,7 @@ import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { SearchResultsPage } from "./pages/SearchResultsPage/SearchResultsPage";
+import { SingleProductPage } from "./pages/SingleProductPage/SingleProductPage";
 import { TeamPage } from "./pages/TeamPage/TeamPage";
 import { debounce } from "./utils/helpers/debounce";
 
@@ -116,47 +117,63 @@ const App = (): React.ReactElement => {
     <Switch>
       <Route
         path="/main"
+        exact
         render={() => (
           <MainPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
         path="/products"
+        exact
         render={() => (
           <ProductPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
         path="/areas"
+        exact
         render={() => (
           <AreasPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
         path="/news"
+        exact
         render={() => (
           <NewsPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
         path="/team"
+        exact
         render={() => (
           <TeamPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
         path="/contacts"
+        exact
         render={() => (
           <ContactsPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
         )}
       />
       <Route
         path="/search"
+        exact
         render={() => (
           <SearchResultsPage
             SWAP_HEADING={SWAP_HEADING}
             windowWidth={windowWidth}
             searchData={searchData}
+          />
+        )}
+      />
+      <Route
+        path="/products/:product"
+        render={() => (
+          <SingleProductPage
+            SWAP_HEADING={SWAP_HEADING}
+            windowWidth={windowWidth}
           />
         )}
       />

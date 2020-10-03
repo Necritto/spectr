@@ -9,7 +9,7 @@ export const AreasPage = ({
   SWAP_HEADING,
   windowWidth,
 }: ISwapHeading): React.ReactElement => {
-  const data: Array<{ id: number; route: string; title: string }> = [
+  const data: Array<{ id: number; route?: string; title: string }> = [
     {
       id: Math.random(),
       route: "biotech",

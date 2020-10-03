@@ -6,13 +6,23 @@
   cursor: pointer;
   margin-bottom: 24px;
 
-  a {
+  a,
+  span {
     color: #000000;
     font-weight: 500;
     font-size: 12.5px;
     line-height: 20px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+  }
+
+  &-disabled {
+    border: 1px solid #e6e6e6;
+    cursor: not-allowed;
+
+    span {
+      color: #5c5c5c;
+    }
   }
 }
 
