@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 import { ISwapHeading } from "../App";
+import { useHistory } from "react-router-dom";
 
 interface LayoutProps extends ISwapHeading {
   children: React.ReactNode;
@@ -16,13 +17,17 @@ export const Layout = ({
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
+  let history = useHistory();
 
   const showModal = (): void => setIsOpenModal(true);
   const closeModal = (): void => setIsOpenModal(false);
   const submitModalHandler = (): void => setIsOpenModal(false);
 
   const toggleShowSearch = (): void => setIsOpenSearch(!isOpenSearch);
-  const submitSearchHandler = (): void => setIsOpenSearch(false);
+  const submitSearchHandler = (): void => {
+    history.push("/search");
+    setIsOpenSearch(false);
+  };
 
   const showBurgerMenu = (): void => setIsOpenBurgerMenu(true);
   const closeBurgerMenu = (): void => setIsOpenBurgerMenu(false);
