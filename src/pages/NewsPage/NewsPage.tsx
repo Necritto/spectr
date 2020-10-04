@@ -4,6 +4,7 @@ import classes from "./NewsPage.module.scss";
 import { ISwapHeading } from "../../App";
 import { Pagination } from "../../components/Pagination/Pagination";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
+import { Container } from "../../hoc/Container/Container";
 
 export const NewsPage = ({
   SWAP_HEADING,
@@ -58,12 +59,14 @@ export const NewsPage = ({
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes["news-page"]}>
-        <div className={classes.container}>
-          <h1>Новости и события</h1>
-          <div className={classes["news-content"]}>
-            <Pagination data={newsData} isNews />
+        <Container>
+          <div className={classes["news-wrap"]}>
+            <h1>Новости и события</h1>
+            <div className={classes["news-content"]}>
+              <Pagination data={newsData} isNews />
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );

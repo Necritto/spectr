@@ -218,28 +218,7 @@ h2 {
   overflow-x: auto;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1520px;
-  }
-}
-
-@media (max-width: 1599px) {
-  .container {
-    max-width: 1120px;
-  }
-}
-
 @media (max-width: 980px) {
-  .container {
-    max-width: 100%;
-  }
-
   .header {
     background: none;
   }

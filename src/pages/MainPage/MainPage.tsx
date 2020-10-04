@@ -10,6 +10,7 @@ import { Button } from "../../components/UI/Button/Button";
 import { News } from "../../components/News/News";
 import { Map } from "../../components/Map/Map";
 import { ISwapHeading } from "../../App";
+import { Container } from "../../hoc/Container/Container";
 
 type Node = {
   id: number;
@@ -144,9 +145,9 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: ISwapHeading) => {
         )}
       </section>
       <section className={classes["carousel-section"]}>
-        <div className={classes.container}>
+        <Container>
           <Carousel data={carouselData} />
-        </div>
+        </Container>
       </section>
       <section className={classes.mission}>
         <div className={classes.heading}>
@@ -171,9 +172,9 @@ export const MainPage = ({ SWAP_HEADING, windowWidth }: ISwapHeading) => {
       <section className={classes["news-section"]}>
         <h2>Новости компании</h2>
         <div className={classes.news__content}>
-          <div className={classes.container}>
+          <Container>
             <News data={newsData} />
-          </div>
+          </Container>
         </div>
         <div className={classes.news__btn}>
           <Button value={"Все новости"} />

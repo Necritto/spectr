@@ -9,6 +9,7 @@ import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
 import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
 import { ISwapHeading } from "../../App";
+import { Container } from "../../hoc/Container/Container";
 
 interface HeaderProps extends ISwapHeading {
   isOpenModal: boolean;
@@ -39,46 +40,48 @@ export const Header = ({
 }: HeaderProps) => {
   return (
     <header className={classes.header}>
-      <div className={classes.container}>
-        {windowWidth > SWAP_HEADING ? (
-          <>
-            <Logo />
-            {isOpenSearch ? (
-              <Search onClick={submitSearchHandler} />
-            ) : (
-              <Navbar />
-            )}
-            <Additional
-              onShowModal={showModal}
-              onShowSearch={toggleShowSearch}
-              onShowBurgerMenu={showBurgerMenu}
-              isOpenSearch={isOpenSearch}
-            />
-          </>
-        ) : (
-          <>
-            {isOpenSearch && (
-              <Search onClick={submitSearchHandler} isSearchModal />
-            )}
-            {isOpenBurgerMenu && (
-              <BurgerMenu onCloseBurgerMenu={closeBurgerMenu} />
-            )}
-            <Additional
-              onShowModal={showModal}
-              onShowSearch={toggleShowSearch}
-              onShowBurgerMenu={showBurgerMenu}
-              isOpenSearch={isOpenSearch}
-              isBurgerMenu
-            />
-          </>
-        )}
+      <Container>
+        <div className={classes["header-wrap"]}>
+          {windowWidth > SWAP_HEADING ? (
+            <>
+              <Logo />
+              {isOpenSearch ? (
+                <Search onClick={submitSearchHandler} />
+              ) : (
+                <Navbar />
+              )}
+              <Additional
+                onShowModal={showModal}
+                onShowSearch={toggleShowSearch}
+                onShowBurgerMenu={showBurgerMenu}
+                isOpenSearch={isOpenSearch}
+              />
+            </>
+          ) : (
+            <>
+              {isOpenSearch && (
+                <Search onClick={submitSearchHandler} isSearchModal />
+              )}
+              {isOpenBurgerMenu && (
+                <BurgerMenu onCloseBurgerMenu={closeBurgerMenu} />
+              )}
+              <Additional
+                onShowModal={showModal}
+                onShowSearch={toggleShowSearch}
+                onShowBurgerMenu={showBurgerMenu}
+                isOpenSearch={isOpenSearch}
+                isBurgerMenu
+              />
+            </>
+          )}
 
-        {isOpenModal && (
-          <Portal>
-            <Modal onCancel={closeModal} onSubmit={submitModalHandler} />
-          </Portal>
-        )}
-      </div>
+          {isOpenModal && (
+            <Portal>
+              <Modal onCancel={closeModal} onSubmit={submitModalHandler} />
+            </Portal>
+          )}
+        </div>
+      </Container>
     </header>
   );
 };

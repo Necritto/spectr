@@ -8,6 +8,7 @@ import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import pdfSvg from "../../assets/img/svg/pdf.svg";
 import { Line } from "../../components/UI/Line/Line";
 import { Table } from "../../components/Table/Table";
+import { Container } from "../../hoc/Container/Container";
 
 export interface ITableData {
   thead: ReadonlyArray<{ id: number; th: string }>;
@@ -253,7 +254,7 @@ export const SingleProductPage = ({
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes.header}>
-        <div className={classes.container}>
+        <Container>
           <div className={classes.heading}>
             <h1>
               РамМикс <span>M532</span>
@@ -263,14 +264,14 @@ export const SingleProductPage = ({
               <Button isPrimary value={"Заказать"} />
             </div>
           </div>
-        </div>
+        </Container>
         <div className={classes.header__img}>
           <div className={classes.mask}></div>
           <img src={img} alt="" />
         </div>
       </section>
       <section className={classes.content}>
-        <div className={classes.container}>
+        <Container>
           <div className={classes["content-wrap"]}>
             <aside>
               <div className={classes.back__btn}>
@@ -416,7 +417,7 @@ export const SingleProductPage = ({
             </div>
           </section>
           <Line />
-        </div>
+        </Container>
       </section>
     </main>
   );

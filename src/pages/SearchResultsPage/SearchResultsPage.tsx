@@ -6,6 +6,7 @@ import { CarouselItem } from "../../components/Carousel/CarouselItem/CarouselIte
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { PaginationItem } from "../../components/Pagination/PaginationItem/PaginationItem";
+import { Container } from "../../hoc/Container/Container";
 
 interface SearchResultsPageProps extends ISwapHeading {
   searchData: ISearchData;
@@ -20,7 +21,7 @@ export const SearchResultsPage = ({
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes["search-res"]}>
-        <div className={classes.container}>
+        <Container>
           <div className={classes.heading}>
             <h1>Результаты поиска (8)</h1>
             <span>По запросу «%query%»</span>
@@ -49,7 +50,7 @@ export const SearchResultsPage = ({
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );

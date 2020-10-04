@@ -4,6 +4,7 @@ import classes from "./ProductPage.module.scss";
 import { Pagination } from "../../components/Pagination/Pagination";
 import { ISwapHeading } from "../../App";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
+import { Container } from "../../hoc/Container/Container";
 
 type productsType = {
   id: number;
@@ -143,7 +144,7 @@ export const ProductPage = ({
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes.products}>
-        <div className={classes.container}>
+        <Container>
           <div className={classes.heading}>
             <div className={classes.heading__wrap}>
               <h1>Наша продукция</h1>
@@ -156,7 +157,7 @@ export const ProductPage = ({
           <div className={classes["pagination-content"]}>
             <Pagination data={products} />
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );

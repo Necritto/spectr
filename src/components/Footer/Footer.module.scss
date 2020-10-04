@@ -2,11 +2,6 @@
   background: #2e2e2e;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .footer__top,
 .footer__bottom {
   display: flex;
@@ -72,23 +67,6 @@
         }
       }
     }
-  }
-}
-
-.line {
-  height: 1px;
-  background-color: #454545;
-}
-
-@media (min-width: 1600px) {
-  .container {
-    max-width: 1520px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1120px;
   }
 }
 
