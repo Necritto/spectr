@@ -7,6 +7,17 @@ import { Button } from "../../components/UI/Button/Button";
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import pdfSvg from "../../assets/img/svg/pdf.svg";
 
+type TableData = {
+  thead: ReadonlyArray<{ id: number; th: string }>;
+  tbody: ReadonlyArray<{
+    blocks: ReadonlyArray<{
+      id: number;
+      th?: string;
+      td?: [string, string, string];
+    }>;
+  }>;
+};
+
 export const SingleProductPage = ({
   SWAP_HEADING,
   windowWidth,
@@ -93,6 +104,149 @@ export const SingleProductPage = ({
     },
   ];
 
+  const tableData: TableData = {
+    thead: [
+      {
+        id: Math.random(),
+        th: "Экспресс - анализатор R532",
+      },
+      {
+        id: Math.random(),
+        th: "Экспресс - анализатор R532-50",
+      },
+    ],
+    tbody: [
+      {
+        blocks: [
+          {
+            id: Math.random(),
+            th: "Лазер",
+          },
+          {
+            id: Math.random(),
+            td: ["Длина волны", "532 нм", "532 нм"],
+          },
+          {
+            id: Math.random(),
+            td: ["Мощность лазера", "30 мВт", "30 мВт"],
+          },
+          {
+            id: Math.random(),
+            th: "Спектрометр",
+          },
+          {
+            id: Math.random(),
+            td: [
+              "Спектральный диапазон",
+              "100 см-1 – 4000 см-1",
+              "100 см-1 – 4000 см-1",
+            ],
+          },
+          {
+            id: Math.random(),
+            td: ["Спектральное разрешение", "4-6 см-1", "7 см-1"],
+          },
+          {
+            id: Math.random(),
+            th: "Спектрометр",
+          },
+          {
+            id: Math.random(),
+            td: ["Тип детектора", "ПЗС-линейка", "ПЗС-линейка"],
+          },
+          {
+            id: Math.random(),
+            td: ["Число пикселей", "3648", "3648"],
+          },
+          {
+            id: Math.random(),
+            td: ["Размер пикселей", "8 мкм x 200 мкм", "8 мкм x 200 мкм"],
+          },
+          {
+            id: Math.random(),
+            td: ["Темновой ток", "630 e/pixel/s", "630 e/pixel/s"],
+          },
+          {
+            id: Math.random(),
+            td: ["Шум считывания", "30 e ско", "30 e ско"],
+          },
+          {
+            id: Math.random(),
+            td: ["Динамический диапазон", "2100", "2100"],
+          },
+          {
+            id: Math.random(),
+            td: ["Максимальный квантовый выход", "90%", "90%"],
+          },
+          {
+            id: Math.random(),
+            td: ["Время интеграции", "10 мс – 500000 мс", "10 мс – 500000 мс"],
+          },
+          {
+            id: Math.random(),
+            th: "Оптическая схема",
+          },
+          {
+            id: Math.random(),
+            td: ["Фокусное расстояние", "75 мм", "75 мм"],
+          },
+          {
+            id: Math.random(),
+            td: ["Входная щель", "20 мкм (30 мкм опционально)", "20 мкм"],
+          },
+          {
+            id: Math.random(),
+            td: [
+              "Дифракционная решетка",
+              "1800 ш/мм голографическая",
+              "1800 ш/мм голографическая",
+            ],
+          },
+          {
+            id: Math.random(),
+            th: "Электротехнические характеристики",
+          },
+          {
+            id: Math.random(),
+            td: ["USB", "1 внешний порт 2.0", "1 внешний порт 2.0"],
+          },
+          {
+            id: Math.random(),
+            td: [
+              "Входное напряжение",
+              "100 – 240 В, 50 –60 Гц",
+              "100 – 240 В, 50 –60 Гц",
+            ],
+          },
+          {
+            id: Math.random(),
+            td: [
+              "Системные требования",
+              "Windows XP/Vista/7/8",
+              "Windows XP/Vista/7/8",
+            ],
+          },
+          {
+            id: Math.random(),
+            th: "Физические характеристики",
+          },
+          {
+            id: Math.random(),
+            td: [
+              "Габариты",
+              "222 мм x 145 мм x 55 мм",
+              "180 мм x 122 мм x 60 мм",
+            ],
+          },
+          {
+            id: Math.random(),
+            td: ["Вес", "1.5 кг", "0.9 кг"],
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
@@ -103,7 +257,7 @@ export const SingleProductPage = ({
               РамМикс <span>M532</span>
             </h1>
             <p>Микроскоп комбинационного рассеяния (Раман)</p>
-            <div className={classes.heading__btn}>
+            <div className={classes.buy__btn}>
               <Button isPrimary value={"Заказать"} />
             </div>
           </div>
@@ -249,6 +403,41 @@ export const SingleProductPage = ({
               </section>
             </article>
           </div>
+          <div className={classes.line}></div>
+          <section className={classes.spec} id="spec">
+            <h2>Спецификация микроскопа</h2>
+            <div className={classes["table-wrap"]}>
+              <table className={classes.table}>
+                <thead>
+                  <tr>
+                    <th></th>
+                    {tableData.thead.map((item) => (
+                      <th>{item.th}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableData.tbody.map((item) =>
+                    item.blocks.map((item) => (
+                      <tr key={item.id}>
+                        {item.th && <th colSpan={3}>{item.th}</th>}
+                        {item.td && (
+                          <>
+                            <td>{item.td[0]}</td>
+                            <td>{item.td[1]}</td>
+                            <td>{item.td[2]}</td>
+                          </>
+                        )}
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <div className={classes.buy__btn}>
+              <Button value={"Заказать"} />
+            </div>
+          </section>
           <div className={classes.line}></div>
         </div>
       </section>
