@@ -216,24 +216,6 @@ h2 {
 
 .table-wrap {
   overflow-x: auto;
-
-  .table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-
-    th,
-    td {
-      padding: 11px 16px;
-      border: 1px solid #e6e6e6;
-    }
-
-    tbody {
-      th {
-        background-color: #f9f9f9;
-      }
-    }
-  }
 }
 
 .container {

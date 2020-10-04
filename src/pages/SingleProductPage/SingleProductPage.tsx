@@ -7,8 +7,9 @@ import { Button } from "../../components/UI/Button/Button";
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import pdfSvg from "../../assets/img/svg/pdf.svg";
 import { Line } from "../../components/UI/Line/Line";
+import { Table } from "../../components/Table/Table";
 
-type TableData = {
+export interface ITableData {
   thead: ReadonlyArray<{ id: number; th: string }>;
   tbody: ReadonlyArray<{
     blocks: ReadonlyArray<{
@@ -17,7 +18,7 @@ type TableData = {
       td?: [string, string, string];
     }>;
   }>;
-};
+}
 
 export const SingleProductPage = ({
   SWAP_HEADING,
@@ -105,7 +106,7 @@ export const SingleProductPage = ({
     },
   ];
 
-  const tableData: TableData = {
+  const tableData: ITableData = {
     thead: [
       {
         id: Math.random(),
@@ -408,32 +409,7 @@ export const SingleProductPage = ({
           <section className={classes.spec} id="spec">
             <h2>Спецификация микроскопа</h2>
             <div className={classes["table-wrap"]}>
-              <table className={classes.table}>
-                <thead>
-                  <tr>
-                    <th></th>
-                    {tableData.thead.map((item) => (
-                      <th>{item.th}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {tableData.tbody.map((item) =>
-                    item.blocks.map((item) => (
-                      <tr key={item.id}>
-                        {item.th && <th colSpan={3}>{item.th}</th>}
-                        {item.td && (
-                          <>
-                            <td>{item.td[0]}</td>
-                            <td>{item.td[1]}</td>
-                            <td>{item.td[2]}</td>
-                          </>
-                        )}
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
+              <Table tableData={tableData} />
             </div>
             <div className={classes.buy__btn}>
               <Button value={"Заказать"} />
