@@ -208,6 +208,16 @@ h2 {
   overflow-x: auto;
 }
 
+.similar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 64px 0;
+
+  & > div {
+    margin-bottom: 24px;
+  }
+}
+
 @media (max-width: 980px) {
   .header {
     background: none;
@@ -250,6 +260,14 @@ h2 {
     font-size: 28.8325px;
     line-height: 36px;
   }
+
+  .similar {
+    justify-content: center;
+
+    & > div:nth-child(2) {
+      margin-right: 0;
+    }
+  }
 }
 
 @media (max-width: 640px) {
@@ -279,6 +297,12 @@ h2 {
   .spec {
     .buy__btn {
       width: 100%;
+    }
+  }
+
+  .similar {
+    & > div {
+      margin-right: 0;
     }
   }
 }

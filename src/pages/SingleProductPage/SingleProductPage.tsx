@@ -10,6 +10,7 @@ import { Line } from "../../components/UI/Line/Line";
 import { Table } from "../../components/Table/Table";
 import { Container } from "../../hoc/Container/Container";
 import { IFrame } from "../../components/IFrame/IFrame";
+import { CarouselItem } from "../../components/Carousel/CarouselItem/CarouselItem";
 
 export interface ITableData {
   thead: ReadonlyArray<{ id: number; th: string }>;
@@ -31,7 +32,11 @@ export const SingleProductPage = ({
   const img1 = "/img/singleProduct/img1.png";
   const src = "https://www.youtube-nocookie.com/embed/PZE05DY43fo";
 
-  const navData: Array<{ id: number; title: string; anchor: string }> = [
+  const navData: ReadonlyArray<{
+    id: number;
+    title: string;
+    anchor: string;
+  }> = [
     {
       id: 1,
       title: "Описание",
@@ -64,7 +69,11 @@ export const SingleProductPage = ({
     },
   ];
 
-  const areaData: Array<{ id: number; route?: string; title: string }> = [
+  const areaData: ReadonlyArray<{
+    id: number;
+    route?: string;
+    title: string;
+  }> = [
     {
       id: Math.random(),
       route: "pharma",
@@ -253,6 +262,32 @@ export const SingleProductPage = ({
     ],
   };
 
+  const similarData: ReadonlyArray<{
+    id: number;
+    imgUrl: string;
+    title: string;
+    descr: string;
+  }> = [
+    {
+      id: 1,
+      imgUrl: "/img/cardImg/img1.png",
+      title: "L405",
+      descr: "Спектрометр комбинационного рассеяния",
+    },
+    {
+      id: 2,
+      imgUrl: "/img/cardImg/img2.png",
+      title: "R1064",
+      descr: "Оптоволоконный UV-VIS-NIR спектрометр",
+    },
+    {
+      id: 3,
+      imgUrl: "/img/cardImg/img3.png",
+      title: "M532",
+      descr: "Микроскоп комбинационного рассеяния (Раман)",
+    },
+  ];
+
   return (
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
@@ -412,6 +447,11 @@ export const SingleProductPage = ({
             </div>
           </section>
           <Line />
+          <section className={classes.similar}>
+            {similarData.map((item) => (
+              <CarouselItem card={item} />
+            ))}
+          </section>
         </Container>
       </section>
     </main>
