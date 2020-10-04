@@ -9,6 +9,7 @@ import pdfSvg from "../../assets/img/svg/pdf.svg";
 import { Line } from "../../components/UI/Line/Line";
 import { Table } from "../../components/Table/Table";
 import { Container } from "../../hoc/Container/Container";
+import { IFrame } from "../../components/IFrame/IFrame";
 
 export interface ITableData {
   thead: ReadonlyArray<{ id: number; th: string }>;
@@ -25,8 +26,10 @@ export const SingleProductPage = ({
   SWAP_HEADING,
   windowWidth,
 }: ISwapHeading): React.ReactElement => {
+  // Temp variables
   const img = "/img/singleProduct/headImg.png";
   const img1 = "/img/singleProduct/img1.png";
+  const src = "https://www.youtube-nocookie.com/embed/PZE05DY43fo";
 
   const navData: Array<{ id: number; title: string; anchor: string }> = [
     {
@@ -326,15 +329,7 @@ export const SingleProductPage = ({
                   соотношению цена-качество сканирующим КР микроскопом на
                   мировом рынке.
                 </p>
-                <div className={classes.youtube}>
-                  <iframe
-                    title="video"
-                    src="https://www.youtube-nocookie.com/embed/PZE05DY43fo"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+                <IFrame src={src} />
               </section>
               <section className={classes.features} id="features">
                 <h2>Особенности</h2>
