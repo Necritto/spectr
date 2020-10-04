@@ -1,64 +1,50 @@
 // Types for interfaces
 
-type ProductsData = {
-  id: number;
-  imgUrl: string;
-  title: string;
-  descr: string;
-};
-
-type AreasData = {
-  id: number;
-  route?: string;
-  title: string;
-};
-
-type NewsData = {
-  id: number;
-  imgUrl: string;
-  title: string;
-  date: string;
-};
-
 type ArticleData = {
   readonly descr: ReadonlyArray<string>;
   readonly videoSrc: string;
   readonly features: ReadonlyArray<string>;
   readonly advantages: ReadonlyArray<string>;
-  readonly areas: ReadonlyArray<AreasData>;
+  readonly areas: ReadonlyArray<IAreasData>;
   readonly docs: ReadonlyArray<{
-    id: number;
-    link: string;
-    title: string;
+    readonly id: number;
+    readonly link: string;
+    readonly title: string;
   }>;
   readonly docsImg: ReadonlyArray<{
-    id: number;
-    imgUrl: string;
+    readonly id: number;
+    readonly imgUrl: string;
   }>;
   readonly tableData: ITableData;
-  readonly similarProducts: ReadonlyArray<ProductsData>;
+  readonly similarProducts: ReadonlyArray<IProductsData>;
+};
+
+type Node = {
+  readonly id: number;
+  readonly title: string;
+  readonly body: string;
 };
 
 // Interfaces
 
 export interface ISwapHeading {
-  SWAP_HEADING: number;
-  windowWidth: number;
+  readonly SWAP_HEADING: number;
+  readonly windowWidth: number;
 }
 
 export interface ISearchData {
-  products: Array<ProductsData>;
-  areas: Array<AreasData>;
-  news: Array<NewsData>;
+  readonly products: Array<IProductsData>;
+  readonly areas: Array<IAreasData>;
+  readonly news: Array<INewsData>;
 }
 
 export interface ITableData {
-  thead: ReadonlyArray<{ id: number; th: string }>;
-  tbody: ReadonlyArray<{
-    blocks: ReadonlyArray<{
-      id: number;
-      th?: string;
-      td?: ReadonlyArray<string>;
+  readonly thead: ReadonlyArray<{ id: number; th: string }>;
+  readonly tbody: ReadonlyArray<{
+    readonly blocks: ReadonlyArray<{
+      readonly id: number;
+      readonly th?: string;
+      readonly td?: ReadonlyArray<string>;
     }>;
   }>;
 }
@@ -70,4 +56,34 @@ export interface IProductData {
   readonly productDescr: string;
   readonly imgUrl: string;
   readonly article: ArticleData;
+}
+
+export interface IAreasData {
+  readonly id: number;
+  readonly route?: string;
+  readonly title: string;
+}
+
+export interface ISliderData {
+  readonly nodes: ReadonlyArray<Node>;
+}
+
+export interface IMainData {
+  readonly sliderData: ISliderData;
+  readonly carouselData: ReadonlyArray<IProductsData>;
+  readonly newsData: ReadonlyArray<INewsData>;
+}
+
+export interface INewsData {
+  readonly id: number;
+  readonly imgUrl: string;
+  readonly title: string;
+  readonly date: string;
+}
+
+export interface IProductsData {
+  readonly id: number;
+  readonly imgUrl: string;
+  readonly title: string;
+  readonly descr: string;
 }

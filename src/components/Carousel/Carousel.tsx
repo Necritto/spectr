@@ -4,14 +4,10 @@ import classes from "./Carousel.module.scss";
 import { Button } from "../UI/Button/Button";
 import { CarouselItem } from "./CarouselItem/CarouselItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
+import { IProductsData } from "../../utils/interfaces/interfaces";
 
 type CarouselProps = {
-  data: Array<{
-    id: number;
-    imgUrl: string;
-    title: string;
-    descr: string;
-  }>;
+  readonly data: ReadonlyArray<IProductsData>;
 };
 
 export const Carousel = ({ data }: CarouselProps) => {

@@ -3,13 +3,10 @@ import classes from "./AreasItem.module.scss";
 
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+import { IAreasData } from "../../../utils/interfaces/interfaces";
 
 type AreasItemProps = {
-  data: {
-    id: number;
-    route?: string;
-    title: string;
-  };
+  data: IAreasData;
 };
 
 export const AreasItem = ({ data }: AreasItemProps): React.ReactElement => {

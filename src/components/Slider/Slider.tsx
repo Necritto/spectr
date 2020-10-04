@@ -5,15 +5,10 @@ import classnames from "classnames";
 
 import { SliderItem } from "./SliderItem/SliderItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
+import { ISliderData } from "../../utils/interfaces/interfaces";
 
 type SliderProps = {
-  data: {
-    nodes: Array<{
-      id: number;
-      title: string;
-      body: string;
-    }>;
-  };
+  readonly data: ISliderData;
 };
 
 export const Slider = ({ data }: SliderProps) => {

@@ -7,16 +7,16 @@ import { PaginationItem } from "./PaginationItem/PaginationItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
 
 type DataType = {
-  id: number;
-  imgUrl: string;
-  title: string;
-  descr?: string;
-  date?: string;
+  readonly id: number;
+  readonly imgUrl: string;
+  readonly title: string;
+  readonly descr?: string;
+  readonly date?: string;
 };
 
 type PaginationProps = {
-  data: Array<DataType>;
-  isNews?: boolean;
+  readonly data: ReadonlyArray<DataType>;
+  readonly isNews?: boolean;
 };
 
 export const Pagination = ({
