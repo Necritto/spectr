@@ -4,11 +4,13 @@ import classes from "./Footer.module.scss";
 import youtubeSvg from "../../assets/img/svg/youtube.svg";
 import linkedinSvg from "../../assets/img/svg/linkedin.svg";
 import cronSvg from "../../assets/img/svg/cronlogo.svg";
+import { Container } from "../../hoc/Container/Container";
+import { Line } from "../UI/Line/Line";
 
 export const Footer = () => {
   return (
     <footer className={classes.footer}>
-      <div className={classes.container}>
+      <Container>
         <div className={classes.footer__top}>
           <p>
             142432, Россия, Московская обл., г. Черноголовка, пр. 1-й, д. 4,
@@ -30,7 +32,7 @@ export const Footer = () => {
             <a href="mailto:sales@enspectr.com">sales@enspectr.com</a>
           </div>
         </div>
-        <div className={classes.line} />
+        <Line isFooter />
         <div className={classes.footer__bottom}>
           <div className={classes.info}>
             <p>ООО «Спектр-М» &copy; 2019</p>
@@ -60,7 +62,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

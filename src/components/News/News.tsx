@@ -1,15 +1,11 @@
 import React from "react";
+import { INewsData } from "../../utils/interfaces/interfaces";
 import classes from "./News.module.scss";
 
 import { NewsItem } from "./NewsItem/NewsItem";
 
 type NewsProps = {
-  data: Array<{
-    id: number;
-    imgUrl: string;
-    date: string;
-    title: string;
-  }>;
+  readonly data: ReadonlyArray<INewsData>;
 };
 
 export const News = ({ data }: NewsProps) => {

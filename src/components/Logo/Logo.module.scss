@@ -4,10 +4,11 @@
 
 .triangle {
   position: absolute;
-  top: 84px;
+  top: 74px;
   transform: translateX(-2px);
   border: 30px solid transparent;
   border-top: 16px solid #ffffff;
+  z-index: 100;
 }
 
 @media (max-width: 980px) {

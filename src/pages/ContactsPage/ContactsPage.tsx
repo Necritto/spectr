@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import classes from "./ContactsPage.module.scss";
 
-import { ISwapHeading } from "../../App";
 import { Map } from "../../components/Map/Map";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Button } from "../../components/UI/Button/Button";
 import { Modal } from "../../components/UI/Modal/Modal";
 import { Portal } from "../../utils/Portal/Portal";
+import { Context } from "../../utils/context/context";
 
-export const ContactsPage = ({
-  SWAP_HEADING,
-  windowWidth,
-}: ISwapHeading): React.ReactElement => {
+export const ContactsPage = (): React.ReactElement => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const showModal = (): void => setIsOpenModal(true);
   const closeModal = (): void => setIsOpenModal(false);
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
 
   isOpenModal
     ? (document.body.style.overflow = "hidden")

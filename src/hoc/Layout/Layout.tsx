@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
-import { Footer } from "../components/Footer/Footer";
-import { Header } from "../components/Header/Header";
-import { ISwapHeading } from "../App";
 import { useHistory } from "react-router-dom";
 
-interface LayoutProps extends ISwapHeading {
-  children: React.ReactNode;
-}
+import { Footer } from "../../components/Footer/Footer";
+import { Header } from "../../components/Header/Header";
+import { Context } from "../../utils/context/context";
 
-export const Layout = ({
-  children,
-  SWAP_HEADING,
-  windowWidth,
-}: LayoutProps) => {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export const Layout = ({ children }: LayoutProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
@@ -31,6 +28,8 @@ export const Layout = ({
 
   const showBurgerMenu = (): void => setIsOpenBurgerMenu(true);
   const closeBurgerMenu = (): void => setIsOpenBurgerMenu(false);
+
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
 
   isOpenModal ||
   (isOpenSearch && windowWidth <= SWAP_HEADING) ||

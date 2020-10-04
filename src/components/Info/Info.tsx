@@ -4,10 +4,11 @@ import classes from "./Info.module.scss";
 import pinSvg from "../../assets/img/svg/map-pin.svg";
 import youtubeSvg from "../../assets/img/svg/youtube.svg";
 import linkedinSvg from "../../assets/img/svg/linkedin.svg";
+import { Container } from "../../hoc/Container/Container";
 
 export const Info = () => {
   return (
-    <div className={classes.container}>
+    <Container>
       <div className={classes["add-info"]}>
         <div className={classes.location}>
           <a
@@ -45,6 +46,6 @@ export const Info = () => {
         </div>
       </div>
       <div className={classes.triangle} />
-    </div>
+    </Container>
   );
 };

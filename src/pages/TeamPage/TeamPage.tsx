@@ -1,68 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./TeamPage.module.scss";
 
-import { ISwapHeading } from "../../App";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { TeamPageItem } from "./TeamPageItem/TeamPageItem";
+import { Context } from "../../utils/context/context";
+import { ITeamData } from "../../utils/interfaces/interfaces";
 
-export const TeamPage = ({
-  SWAP_HEADING,
-  windowWidth,
-}: ISwapHeading): React.ReactElement => {
-  const data: Array<{
-    id: number;
-    imgUrl: string;
-    name: string;
-    position: string;
-    descr: string;
-    interests?: string;
-  }> = [
-    {
-      id: 1,
-      imgUrl: "img/teamImg/image-min.png",
-      name: "Л. В. Кулик",
-      position: "Генеральный директор, д-р физ.-мат. наук, профессор РАН",
-      descr:
-        "Проф. Л.В.Кулик имеет многолетний опыт работы в области спектроскопии комбинационного рассеяния света и управления научными проектами. Награжден премией Гумбольдта в 2000 году, а в 2007 году премией Президента РФ для молодых докторов наук. Проф. Кулик является автором более 70 научных публикаций.",
-      interests:
-        "спектроскопия комбинационного рассеяния коллективных электронных возбуждений в низкоразмерных полупроводниковых гетероструктурах.",
-    },
-    {
-      id: 2,
-      imgUrl: "img/teamImg/image-1-min.png",
-      name: "И. В. Кукушкин",
-      position:
-        "Технологический директор, академик РАН, профессор МГУ и Московского физико-технического института (МФТИ)",
-      descr:
-        "Награжден Российской государственной премией в области физики, премиями имени Макса Планка и Гумбольдта в 2001 году. Академик И.В. Кукушкин является автором более 200 научных публикаций и 4 патентов.      ",
-      interests:
-        "магнитооптика полупроводников, композитные фермионы, рамановская спектроскопия электронных возбуждений в полупроводниках.",
-    },
-    {
-      id: 3,
-      imgUrl: "img/teamImg/image-2-min.png",
-      name: "Вадим Кирпичёв",
-      position: "к. физ.-мат. наук",
-      descr:
-        "Автор более 40 научных публикаций, исследователь в области рамановской спектроскопии кристаллов, обладатель более, чем 20-летнего опыта работы со спектроскопическим и лазерным оборудованием.",
-    },
-    {
-      id: 4,
-      imgUrl: "img/teamImg/image-3-min.png",
-      name: "Андрей Журавлёв",
-      position: "к. физ.-мат. наук",
-      descr:
-        "Исследователь в области рамановской спектроскопии твердотельных объектов, применений SERS-технологии, автор 20 научных публикаций.",
-    },
-    {
-      id: 5,
-      imgUrl: "img/teamImg/image-4-min.png",
-      name: "Александр Ваньков",
-      position: "к. физ.-мат. наук",
-      descr:
-        "Исследователь в области рамановской спектроскопии твердотельных и органических веществ, применений SERS-технологии, автор более 20 научных публикаций.",
-    },
-  ];
+type TeamPageProps = {
+  readonly teamData: ReadonlyArray<ITeamData>;
+};
+
+export const TeamPage = ({ teamData }: TeamPageProps): React.ReactElement => {
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
 
   return (
     <main className={classes.main}>
@@ -95,7 +44,7 @@ export const TeamPage = ({
           </p>
         </div>
         <div className={classes.team}>
-          {data.map((item) => (
+          {teamData.map((item) => (
             <TeamPageItem key={item.id} data={item} />
           ))}
         </div>

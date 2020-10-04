@@ -1,26 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./SearchResultsPage.module.scss";
 
-import { ISwapHeading, ISearchData } from "../../App";
+import { ISearchData } from "../../utils/interfaces/interfaces";
 import { CarouselItem } from "../../components/Carousel/CarouselItem/CarouselItem";
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { PaginationItem } from "../../components/Pagination/PaginationItem/PaginationItem";
+import { Container } from "../../hoc/Container/Container";
+import { Context } from "../../utils/context/context";
 
-interface SearchResultsPageProps extends ISwapHeading {
+type SearchResultsPageProps = {
   searchData: ISearchData;
-}
+};
 
 export const SearchResultsPage = ({
-  SWAP_HEADING,
-  windowWidth,
   searchData,
 }: SearchResultsPageProps): React.ReactElement => {
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
+
   return (
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}
       <section className={classes["search-res"]}>
-        <div className={classes.container}>
+        <Container>
           <div className={classes.heading}>
             <h1>Результаты поиска (8)</h1>
             <span>По запросу «%query%»</span>
@@ -49,7 +51,7 @@ export const SearchResultsPage = ({
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );
