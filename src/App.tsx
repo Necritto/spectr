@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import { Layout } from "./hoc/Layout";
+import { Layout } from "./hoc/Layout/Layout";
 import { AreasPage } from "./pages/AreasPage/AreasPage";
 import { ContactsPage } from "./pages/ContactsPage/ContactsPage";
 import { MainPage } from "./pages/MainPage/MainPage";
