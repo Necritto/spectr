@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./AreasPage.module.scss";
 
-import { ISwapHeading } from "../../App";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { AreasItem } from "./AreasItem/AreasItem";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Container } from "../../hoc/Container/Container";

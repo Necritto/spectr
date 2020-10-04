@@ -9,7 +9,7 @@ import { Carousel } from "../../components/Carousel/Carousel";
 import { Button } from "../../components/UI/Button/Button";
 import { News } from "../../components/News/News";
 import { Map } from "../../components/Map/Map";
-import { ISwapHeading } from "../../App";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { Container } from "../../hoc/Container/Container";
 
 type Node = {

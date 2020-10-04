@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./ProductPage.module.scss";
 
 import { Pagination } from "../../components/Pagination/Pagination";
-import { ISwapHeading } from "../../App";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Container } from "../../hoc/Container/Container";
 

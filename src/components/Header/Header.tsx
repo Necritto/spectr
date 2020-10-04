@@ -8,7 +8,7 @@ import { Portal } from "../../utils/Portal/Portal";
 import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
 import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
-import { ISwapHeading } from "../../App";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { Container } from "../../hoc/Container/Container";
 
 interface HeaderProps extends ISwapHeading {

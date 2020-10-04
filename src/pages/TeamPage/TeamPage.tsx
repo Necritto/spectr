@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./TeamPage.module.scss";
 
-import { ISwapHeading } from "../../App";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { TeamPageItem } from "./TeamPageItem/TeamPageItem";
 

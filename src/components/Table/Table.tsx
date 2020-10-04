@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Table.module.scss";
 
-import { ITableData } from "../../pages/SingleProductPage/SingleProductPage";
+import { ITableData } from "../../utils/interfaces/interfaces";
 
 type TableProps = {
   readonly tableData: ITableData;

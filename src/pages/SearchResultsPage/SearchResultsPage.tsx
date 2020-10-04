@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./SearchResultsPage.module.scss";
 
-import { ISwapHeading, ISearchData } from "../../App";
+import { ISwapHeading, ISearchData } from "../../utils/interfaces/interfaces";
 import { CarouselItem } from "../../components/Carousel/CarouselItem/CarouselItem";
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";

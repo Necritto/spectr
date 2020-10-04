@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
-import { ISwapHeading } from "../../App";
 import { useHistory } from "react-router-dom";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 
 interface LayoutProps extends ISwapHeading {
   children: React.ReactNode;

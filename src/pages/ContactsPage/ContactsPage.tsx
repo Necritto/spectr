@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./ContactsPage.module.scss";
 
-import { ISwapHeading } from "../../App";
+import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { Map } from "../../components/Map/Map";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Button } from "../../components/UI/Button/Button";
