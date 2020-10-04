@@ -18,6 +18,7 @@ import {
   IMainData,
   IProductData,
   ISearchData,
+  ITeamData,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
 import { Context } from "./utils/context/context";
@@ -27,8 +28,9 @@ const App = (): React.ReactElement => {
   const [windowWidth, setWindowWidth] = useState(0);
   const searchData: ISearchData = db.searchData;
   const productData: IProductData = db.productData;
-  const areasData: Array<IAreasData> = db.areasData;
+  const areasData: ReadonlyArray<IAreasData> = db.areasData;
   const mainData: IMainData = db.mainData;
+  const teamData: ReadonlyArray<ITeamData> = db.teamData;
 
   useEffect(() => {
     const handleResize = debounce(() => setWindowWidth(window.innerWidth), 200);
@@ -71,7 +73,11 @@ const App = (): React.ReactElement => {
         path="/products/:product"
         render={() => <SingleProductPage productData={productData} />}
       />
-      <Route path="/team" exact render={() => <TeamPage />} />
+      <Route
+        path="/team"
+        exact
+        render={() => <TeamPage teamData={teamData} />}
+      />
       <Route path="/contacts" exact render={() => <ContactsPage />} />
       <Route path="/404" render={() => <NotFound />} />
       <Redirect to="/404" />

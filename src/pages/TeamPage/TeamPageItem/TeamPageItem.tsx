@@ -1,16 +1,11 @@
 import React from "react";
-import { Line } from "../../../components/UI/Line/Line";
 import classes from "./TeamPageItem.module.scss";
 
+import { Line } from "../../../components/UI/Line/Line";
+import { ITeamData } from "../../../utils/interfaces/interfaces";
+
 type TeamPageItemProps = {
-  data: {
-    id: number;
-    imgUrl: string;
-    name: string;
-    position: string;
-    descr: string;
-    interests?: string;
-  };
+  readonly data: ITeamData;
 };
 
 export const TeamPageItem = ({

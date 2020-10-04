@@ -87,3 +87,12 @@ export interface IProductsData {
   readonly title: string;
   readonly descr: string;
 }
+
+export interface ITeamData {
+  readonly id: number;
+  readonly imgUrl: string;
+  readonly name: string;
+  readonly position: string;
+  readonly descr: string;
+  readonly interests?: string;
+}

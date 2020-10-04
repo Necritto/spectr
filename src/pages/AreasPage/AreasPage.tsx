@@ -8,7 +8,7 @@ import { Container } from "../../hoc/Container/Container";
 import { Context } from "../../utils/context/context";
 
 type AreasPageProps = {
-  areasData: Array<IAreasData>;
+  readonly areasData: ReadonlyArray<IAreasData>;
 };
 
 export const AreasPage = ({
