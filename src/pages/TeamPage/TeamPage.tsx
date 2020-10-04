@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./TeamPage.module.scss";
 
-import { ISwapHeading } from "../../utils/interfaces/interfaces";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { TeamPageItem } from "./TeamPageItem/TeamPageItem";
+import { Context } from "../../utils/context/context";
 
-export const TeamPage = ({
-  SWAP_HEADING,
-  windowWidth,
-}: ISwapHeading): React.ReactElement => {
+export const TeamPage = (): React.ReactElement => {
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
   const data: Array<{
     id: number;
     imgUrl: string;

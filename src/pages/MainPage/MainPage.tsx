@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./MainPage.module.scss";
 
 import { Slider } from "../../components/Slider/Slider";
@@ -9,19 +9,17 @@ import { Carousel } from "../../components/Carousel/Carousel";
 import { Button } from "../../components/UI/Button/Button";
 import { News } from "../../components/News/News";
 import { Map } from "../../components/Map/Map";
-import { IMainData, ISwapHeading } from "../../utils/interfaces/interfaces";
+import { IMainData } from "../../utils/interfaces/interfaces";
 import { Container } from "../../hoc/Container/Container";
+import { Context } from "../../utils/context/context";
 
-interface MainPageProps extends ISwapHeading {
+type MainPageProps = {
   readonly mainData: IMainData;
-}
+};
 
-export const MainPage = ({
-  SWAP_HEADING,
-  windowWidth,
-  mainData,
-}: MainPageProps) => {
+export const MainPage = ({ mainData }: MainPageProps) => {
   const { sliderData, carouselData, newsData } = mainData;
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
 
   return (
     <main className={classes.main}>

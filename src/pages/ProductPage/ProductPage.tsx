@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./ProductPage.module.scss";
 
 import { Pagination } from "../../components/Pagination/Pagination";
-import { IProductsData, ISwapHeading } from "../../utils/interfaces/interfaces";
+import { IProductsData } from "../../utils/interfaces/interfaces";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Container } from "../../hoc/Container/Container";
+import { Context } from "../../utils/context/context";
 
-interface ProductPageProps extends ISwapHeading {
+type ProductPageProps = {
   readonly productsData: ReadonlyArray<IProductsData>;
-}
+};
 
 export const ProductPage = ({
-  SWAP_HEADING,
-  windowWidth,
   productsData,
 }: ProductPageProps): React.ReactElement => {
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
+
   return (
     <main className={classes.main}>
       {windowWidth < SWAP_HEADING && <MobileLogo />}

@@ -20,6 +20,7 @@ import {
   ISearchData,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
+import { Context } from "./utils/context/context";
 
 const App = (): React.ReactElement => {
   const SWAP_HEADING: number = 980;
@@ -44,96 +45,43 @@ const App = (): React.ReactElement => {
       <Route
         path="/main"
         exact
-        render={() => (
-          <MainPage
-            SWAP_HEADING={SWAP_HEADING}
-            windowWidth={windowWidth}
-            mainData={mainData}
-          />
-        )}
+        render={() => <MainPage mainData={mainData} />}
       />
       <Route
         path="/products"
         exact
-        render={() => (
-          <ProductPage
-            SWAP_HEADING={SWAP_HEADING}
-            windowWidth={windowWidth}
-            productsData={mainData.carouselData}
-          />
-        )}
+        render={() => <ProductPage productsData={mainData.carouselData} />}
       />
       <Route
         path="/areas"
         exact
-        render={() => (
-          <AreasPage
-            SWAP_HEADING={SWAP_HEADING}
-            windowWidth={windowWidth}
-            areasData={areasData}
-          />
-        )}
+        render={() => <AreasPage areasData={areasData} />}
       />
       <Route
         path="/news"
         exact
-        render={() => (
-          <NewsPage
-            SWAP_HEADING={SWAP_HEADING}
-            windowWidth={windowWidth}
-            newsData={mainData.newsData}
-          />
-        )}
-      />
-      <Route
-        path="/team"
-        exact
-        render={() => (
-          <TeamPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
-        )}
-      />
-      <Route
-        path="/contacts"
-        exact
-        render={() => (
-          <ContactsPage SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
-        )}
+        render={() => <NewsPage newsData={mainData.newsData} />}
       />
       <Route
         path="/search"
         exact
-        render={() => (
-          <SearchResultsPage
-            SWAP_HEADING={SWAP_HEADING}
-            windowWidth={windowWidth}
-            searchData={searchData}
-          />
-        )}
+        render={() => <SearchResultsPage searchData={searchData} />}
       />
       <Route
         path="/products/:product"
-        render={() => (
-          <SingleProductPage
-            SWAP_HEADING={SWAP_HEADING}
-            windowWidth={windowWidth}
-            productData={productData}
-          />
-        )}
+        render={() => <SingleProductPage productData={productData} />}
       />
-      <Route
-        path="/404"
-        render={() => (
-          <NotFound SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth} />
-        )}
-      />
+      <Route path="/team" exact render={() => <TeamPage />} />
+      <Route path="/contacts" exact render={() => <ContactsPage />} />
+      <Route path="/404" render={() => <NotFound />} />
       <Redirect to="/404" />
     </Switch>
   );
 
   return (
-    <Layout SWAP_HEADING={SWAP_HEADING} windowWidth={windowWidth}>
-      {routes}
-    </Layout>
+    <Context.Provider value={{ SWAP_HEADING, windowWidth }}>
+      <Layout>{routes}</Layout>
+    </Context.Provider>
   );
 };
 

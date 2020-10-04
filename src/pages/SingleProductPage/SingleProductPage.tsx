@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./SingleProductPage.module.scss";
 
-import { ISwapHeading, IProductData } from "../../utils/interfaces/interfaces";
+import { IProductData } from "../../utils/interfaces/interfaces";
 import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Button } from "../../components/UI/Button/Button";
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
@@ -11,16 +11,16 @@ import { Table } from "../../components/Table/Table";
 import { Container } from "../../hoc/Container/Container";
 import { IFrame } from "../../components/IFrame/IFrame";
 import { CarouselItem } from "../../components/Carousel/CarouselItem/CarouselItem";
+import { Context } from "../../utils/context/context";
 
-interface SingleProductPageProps extends ISwapHeading {
+type SingleProductPageProps = {
   readonly productData: IProductData;
-}
+};
 
 export const SingleProductPage = ({
-  SWAP_HEADING,
-  windowWidth,
   productData,
 }: SingleProductPageProps): React.ReactElement => {
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
   const { name, mark, productDescr, imgUrl, article } = productData;
   const {
     descr,
