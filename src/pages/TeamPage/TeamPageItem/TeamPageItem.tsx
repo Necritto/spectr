@@ -1,4 +1,5 @@
 import React from "react";
+import { Line } from "../../../components/UI/Line/Line";
 import classes from "./TeamPageItem.module.scss";
 
 type TeamPageItemProps = {
@@ -37,7 +38,7 @@ export const TeamPageItem = ({
           )}
         </div>
       </article>
-      <div className={classes.line}></div>
+      <Line />
     </>
   );
 };

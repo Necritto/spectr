@@ -6,6 +6,7 @@ import { MobileLogo } from "../../components/UI/MobileLogo/MobileLogo";
 import { Button } from "../../components/UI/Button/Button";
 import { AreasItem } from "../AreasPage/AreasItem/AreasItem";
 import pdfSvg from "../../assets/img/svg/pdf.svg";
+import { Line } from "../../components/UI/Line/Line";
 
 type TableData = {
   thead: ReadonlyArray<{ id: number; th: string }>;
@@ -403,7 +404,7 @@ export const SingleProductPage = ({
               </section>
             </article>
           </div>
-          <div className={classes.line}></div>
+          <Line />
           <section className={classes.spec} id="spec">
             <h2>Спецификация микроскопа</h2>
             <div className={classes["table-wrap"]}>
@@ -438,7 +439,7 @@ export const SingleProductPage = ({
               <Button value={"Заказать"} />
             </div>
           </section>
-          <div className={classes.line}></div>
+          <Line />
         </div>
       </section>
     </main>

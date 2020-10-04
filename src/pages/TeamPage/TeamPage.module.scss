@@ -36,6 +36,12 @@
   }
 }
 
+.team {
+  & > div:last-child {
+    display: none;
+  }
+}
+
 .jurist {
   display: flex;
   justify-content: space-between;
