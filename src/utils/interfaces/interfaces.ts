@@ -150,3 +150,11 @@ export interface INode {
   readonly title: string;
   readonly body: string;
 }
+
+export interface INewData {
+  readonly id: number;
+  readonly title: string;
+  readonly imgUrl: string;
+  readonly descr: ReadonlyArray<string>;
+  readonly link: string;
+}

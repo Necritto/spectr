@@ -12,6 +12,7 @@ import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { SearchResultsPage } from "./pages/SearchResultsPage/SearchResultsPage";
 import { SingleProductPage } from "./pages/SingleProductPage/SingleProductPage";
 import { SingleAreaPage } from "./pages/SingleAreaPage/SingleAreaPage";
+import { SingleNewPage } from "./pages/SingleNewPage/SingleNewPage";
 import { TeamPage } from "./pages/TeamPage/TeamPage";
 import { debounce } from "./utils/helpers/debounce";
 import { Context } from "./utils/context/context";
@@ -23,6 +24,7 @@ import {
   ITeamData,
   IAreaData,
   INavNodes,
+  INewData,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
 
@@ -37,6 +39,7 @@ const App = (): React.ReactElement => {
   const teamData: ReadonlyArray<ITeamData> = db.teamData;
   const areaData: IAreaData = db.areaData;
   const navData: INavNodes = db.navBarData;
+  const newData: INewData = db.newData;
 
   useEffect(() => {
     const handleResize = debounce(() => setWindowWidth(window.innerWidth), 200);
@@ -79,6 +82,11 @@ const App = (): React.ReactElement => {
       <Route
         path="/areas/:area"
         render={() => <SingleAreaPage areaData={areaData} />}
+      />
+      <Route
+        path="/news/:id"
+        exact
+        render={() => <SingleNewPage newData={newData} />}
       />
       <Route
         path="/team"
