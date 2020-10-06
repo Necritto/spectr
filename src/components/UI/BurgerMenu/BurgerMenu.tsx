@@ -8,8 +8,8 @@ import { Button } from "../Button/Button";
 import { INavNodes } from "../../../utils/interfaces/interfaces";
 
 type BurgerMenuProps = {
-  onCloseBurgerMenu: () => void;
-  navData: INavNodes;
+  readonly onCloseBurgerMenu: () => void;
+  readonly navData: INavNodes;
 };
 
 export const BurgerMenu = ({

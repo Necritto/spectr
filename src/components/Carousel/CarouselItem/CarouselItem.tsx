@@ -1,16 +1,15 @@
 import React from "react";
 import classes from "./CarouselItem.module.scss";
 
+import { IProductsData } from "../../../utils/interfaces/interfaces";
+
 type CarouselItemProps = {
-  card: {
-    id: number;
-    imgUrl: string;
-    title: string;
-    descr: string;
-  };
+  readonly card: IProductsData;
 };
 
-export const CarouselItem = ({ card }: CarouselItemProps) => {
+export const CarouselItem = ({
+  card,
+}: CarouselItemProps): React.ReactElement => {
   return (
     <div className={classes.carousel__item}>
       <div className={classes.card__img}>

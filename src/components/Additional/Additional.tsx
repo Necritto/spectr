@@ -6,11 +6,11 @@ import timesSvg from "../../assets/img/svg/times.svg";
 import envelopeSvg from "../../assets/img/svg/envelope.svg";
 
 type AdditionalProps = {
-  onShowModal: () => void;
-  onShowSearch: () => void;
-  onShowBurgerMenu?: () => void;
-  isOpenSearch: boolean;
-  isBurgerMenu?: boolean;
+  readonly onShowModal: () => void;
+  readonly onShowSearch: () => void;
+  readonly onShowBurgerMenu?: () => void;
+  readonly isOpenSearch: boolean;
+  readonly isBurgerMenu?: boolean;
 };
 
 export const Additional = ({
@@ -19,7 +19,7 @@ export const Additional = ({
   isOpenSearch,
   isBurgerMenu,
   onShowBurgerMenu,
-}: AdditionalProps) => {
+}: AdditionalProps): React.ReactElement => {
   return (
     <div className={classes.additional}>
       <div className={classes.search} onClick={onShowSearch}>

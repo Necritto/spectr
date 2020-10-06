@@ -7,7 +7,7 @@ import cronSvg from "../../assets/img/svg/cronlogo.svg";
 import { Container } from "../../hoc/Container/Container";
 import { Line } from "../UI/Line/Line";
 
-export const Footer = () => {
+export const Footer = (): React.ReactElement => {
   return (
     <footer className={classes.footer}>
       <Container>

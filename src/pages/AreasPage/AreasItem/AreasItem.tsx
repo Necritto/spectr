@@ -3,10 +3,11 @@ import classes from "./AreasItem.module.scss";
 
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+
 import { IAreasData } from "../../../utils/interfaces/interfaces";
 
 type AreasItemProps = {
-  data: IAreasData;
+  readonly data: IAreasData;
 };
 
 export const AreasItem = ({ data }: AreasItemProps): React.ReactElement => {

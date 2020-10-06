@@ -10,7 +10,7 @@ import { Container } from "../../hoc/Container/Container";
 import { Context } from "../../utils/context/context";
 
 type SearchResultsPageProps = {
-  searchData: ISearchData;
+  readonly searchData: ISearchData;
 };
 
 export const SearchResultsPage = ({

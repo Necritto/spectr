@@ -4,7 +4,7 @@ import classes from "./Line.module.scss";
 import classnames from "classnames";
 
 type LineProps = {
-  isFooter?: boolean;
+  readonly isFooter?: boolean;
 };
 
 export const Line = ({ isFooter }: LineProps): React.ReactElement => (

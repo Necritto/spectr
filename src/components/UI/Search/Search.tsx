@@ -7,11 +7,14 @@ import { Button } from "../Button/Button";
 import searchSvg from "../../../assets/img/svg/search-bg.svg";
 
 type SearchType = {
-  onClick: () => void;
-  isSearchModal?: boolean;
+  readonly onClick: () => void;
+  readonly isSearchModal?: boolean;
 };
 
-export const Search = ({ onClick, isSearchModal }: SearchType) => {
+export const Search = ({
+  onClick,
+  isSearchModal,
+}: SearchType): React.ReactElement => {
   return (
     <>
       {isSearchModal ? (

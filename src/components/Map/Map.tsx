@@ -6,25 +6,28 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import GoogleMapStyles from "../../utils/helpers/googleMap.json";
 import markerSvg from "../../assets/img/svg/marker.svg";
 
-export const Map: React.FC = (): React.ReactElement => {
-  const { isLoaded }: { isLoaded: boolean } = useLoadScript({
+export const Map = (): React.ReactElement => {
+  const { isLoaded }: { readonly isLoaded: boolean } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
 
-  const mapContainerStyle: { width: string; height: string } = {
+  const mapContainerStyle: {
+    readonly width: string;
+    readonly height: string;
+  } = {
     width: "100%",
     height: "400px",
   };
 
-  const center: { lat: number; lng: number } = {
+  const center: { readonly lat: number; readonly lng: number } = {
     lat: 55.7522,
     lng: 37.6156,
   };
 
   const options: {
-    style: object;
-    disableDefaultUI: boolean;
-    zoomControl: boolean;
+    readonly style: object;
+    readonly disableDefaultUI: boolean;
+    readonly zoomControl: boolean;
   } = {
     style: GoogleMapStyles,
     disableDefaultUI: true,

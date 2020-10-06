@@ -19,12 +19,6 @@ type ArticleData = {
   readonly similarProducts: ReadonlyArray<IProductsData>;
 };
 
-type Node = {
-  readonly id: number;
-  readonly title: string;
-  readonly body: string;
-};
-
 type DocsLink = {
   readonly id: number;
   readonly link: string;
@@ -94,7 +88,7 @@ export interface IAreasData {
 }
 
 export interface ISliderData {
-  readonly nodes: ReadonlyArray<Node>;
+  readonly nodes: ReadonlyArray<INode>;
 }
 
 export interface IMainData {
@@ -141,4 +135,18 @@ export interface IAreaData {
 
 export interface INavNodes {
   readonly nodes: ReadonlyArray<NavNode>;
+}
+
+export interface IPaginationData {
+  readonly id: number;
+  readonly imgUrl: string;
+  readonly title: string;
+  readonly descr?: string;
+  readonly date?: string;
+}
+
+export interface INode {
+  readonly id: number;
+  readonly title: string;
+  readonly body: string;
 }

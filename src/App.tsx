@@ -11,8 +11,10 @@ import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { SearchResultsPage } from "./pages/SearchResultsPage/SearchResultsPage";
 import { SingleProductPage } from "./pages/SingleProductPage/SingleProductPage";
+import { SingleAreaPage } from "./pages/SingleAreaPage/SingleAreaPage";
 import { TeamPage } from "./pages/TeamPage/TeamPage";
 import { debounce } from "./utils/helpers/debounce";
+import { Context } from "./utils/context/context";
 import {
   IAreasData,
   IMainData,
@@ -23,12 +25,11 @@ import {
   INavNodes,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
-import { Context } from "./utils/context/context";
-import { SingleAreaPage } from "./pages/SingleAreaPage/SingleAreaPage";
 
 const App = (): React.ReactElement => {
   const SWAP_HEADING: number = 980;
   const [windowWidth, setWindowWidth] = useState(0);
+
   const searchData: ISearchData = db.searchData;
   const productData: IProductData = db.productData;
   const areasData: ReadonlyArray<IAreasData> = db.areasData;
@@ -41,6 +42,7 @@ const App = (): React.ReactElement => {
     const handleResize = debounce(() => setWindowWidth(window.innerWidth), 200);
     window.addEventListener("DOMContentLoaded", handleResize);
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("DOMContentLoaded", handleResize);
       window.removeEventListener("resize", handleResize);

@@ -8,8 +8,8 @@ import { Context } from "../../utils/context/context";
 import { INavNodes } from "../../utils/interfaces/interfaces";
 
 type LayoutProps = {
-  children: React.ReactNode;
-  navData: INavNodes;
+  readonly children: React.ReactNode;
+  readonly navData: INavNodes;
 };
 
 export const Layout = ({ children, navData }: LayoutProps) => {

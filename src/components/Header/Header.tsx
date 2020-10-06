@@ -8,22 +8,22 @@ import { Portal } from "../../utils/Portal/Portal";
 import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
 import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
-import { INavNodes, ISwapHeading } from "../../utils/interfaces/interfaces";
+import { INavNodes } from "../../utils/interfaces/interfaces";
 import { Container } from "../../hoc/Container/Container";
 import { Context } from "../../utils/context/context";
 
 type HeaderProps = {
-  isOpenModal: boolean;
-  isOpenSearch: boolean;
-  isOpenBurgerMenu: boolean;
-  showModal: () => void;
-  closeModal: () => void;
-  submitModalHandler: () => void;
-  toggleShowSearch: () => void;
-  submitSearchHandler: () => void;
-  showBurgerMenu: () => void;
-  closeBurgerMenu: () => void;
-  navData: INavNodes;
+  readonly isOpenModal: boolean;
+  readonly isOpenSearch: boolean;
+  readonly isOpenBurgerMenu: boolean;
+  readonly showModal: () => void;
+  readonly closeModal: () => void;
+  readonly submitModalHandler: () => void;
+  readonly toggleShowSearch: () => void;
+  readonly submitSearchHandler: () => void;
+  readonly showBurgerMenu: () => void;
+  readonly closeBurgerMenu: () => void;
+  readonly navData: INavNodes;
 };
 
 export const Header = ({
@@ -38,7 +38,7 @@ export const Header = ({
   showBurgerMenu,
   closeBurgerMenu,
   navData,
-}: HeaderProps) => {
+}: HeaderProps): React.ReactElement => {
   const { SWAP_HEADING, windowWidth } = useContext(Context);
 
   return (
