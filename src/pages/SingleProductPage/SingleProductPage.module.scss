@@ -1,14 +1,16 @@
+.main {
+  h2 {
+    font-weight: bold;
+    font-size: 37.3248px;
+    line-height: 48px;
+    margin-bottom: 32px;
+  }
+}
+
 .header {
   background-color: #f9f9f9;
   display: flex;
   align-items: center;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 37.3248px;
-  line-height: 48px;
-  margin-bottom: 32px;
 }
 
 .heading {
@@ -256,9 +258,11 @@ h2 {
     flex-basis: 100%;
   }
 
-  h2 {
-    font-size: 28.8325px;
-    line-height: 36px;
+  .main {
+    h2 {
+      font-size: 28.8325px;
+      line-height: 36px;
+    }
   }
 
   .similar {

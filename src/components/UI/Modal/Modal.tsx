@@ -4,11 +4,14 @@ import classes from "./Modal.module.scss";
 import { Button } from "../Button/Button";
 
 type ModalProps = {
-  onCancel: () => void;
-  onSubmit: () => void;
+  readonly onCancel: () => void;
+  readonly onSubmit: () => void;
 };
 
-export const Modal = ({ onCancel, onSubmit }: ModalProps) => {
+export const Modal = ({
+  onCancel,
+  onSubmit,
+}: ModalProps): React.ReactElement => {
   return (
     <div className={classes.modalOverlay}>
       <div className={classes.modal}>

@@ -3,14 +3,10 @@ import classes from "./PaginationItem.module.scss";
 
 import classnames from "classnames";
 
+import { IPaginationData } from "../../../utils/interfaces/interfaces";
+
 type PaginationItemProps = {
-  pageData: {
-    id: number;
-    imgUrl: string;
-    title: string;
-    descr?: string;
-    date?: string;
-  };
+  pageData: IPaginationData;
   isNews?: boolean;
 };
 

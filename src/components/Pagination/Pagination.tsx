@@ -5,17 +5,10 @@ import chunk from "lodash/chunk";
 
 import { PaginationItem } from "./PaginationItem/PaginationItem";
 import arrowSvg from "../../assets/img/svg/arrow.svg";
-
-type DataType = {
-  readonly id: number;
-  readonly imgUrl: string;
-  readonly title: string;
-  readonly descr?: string;
-  readonly date?: string;
-};
+import { IPaginationData } from "../../utils/interfaces/interfaces";
 
 type PaginationProps = {
-  readonly data: ReadonlyArray<DataType>;
+  readonly data: ReadonlyArray<IPaginationData>;
   readonly isNews?: boolean;
 };
 
@@ -27,11 +20,12 @@ export const Pagination = ({
   const productOnPage: number = 6;
   const numberOfPages: number = Math.ceil(data.length / productOnPage);
 
-  const displayedData: Array<DataType> = chunk(data, productOnPage)[
-    currentPage
-  ];
+  const displayedData: ReadonlyArray<IPaginationData> = chunk(
+    data,
+    productOnPage
+  )[currentPage];
 
-  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>): void => {
     if (e.currentTarget.id === "left" && currentPage > 0) {
       setCurrentPage(--currentPage);
     }

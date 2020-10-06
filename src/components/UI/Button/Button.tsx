@@ -6,14 +6,14 @@ import classnames from "classnames";
 import timesSvg from "../../../assets/img/svg/times.svg";
 
 type ButtonProps = {
-  value?: string;
-  type?: "submit";
-  isPrimary?: boolean;
-  isCancel?: boolean;
-  isTimes?: boolean;
-  onShow?: () => void;
-  onClose?: () => void;
-  onSubmit?: () => void;
+  readonly value?: string;
+  readonly type?: "submit";
+  readonly isPrimary?: boolean;
+  readonly isCancel?: boolean;
+  readonly isTimes?: boolean;
+  readonly onShow?: () => void;
+  readonly onClose?: () => void;
+  readonly onSubmit?: () => void;
 };
 
 export const Button = ({
@@ -25,7 +25,7 @@ export const Button = ({
   onShow,
   onClose,
   onSubmit,
-}: ButtonProps) => {
+}: ButtonProps): React.ReactElement => {
   return (
     <button
       className={classnames(classes.button, {

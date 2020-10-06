@@ -6,7 +6,7 @@ import youtubeSvg from "../../assets/img/svg/youtube.svg";
 import linkedinSvg from "../../assets/img/svg/linkedin.svg";
 import { Container } from "../../hoc/Container/Container";
 
-export const Info = () => {
+export const Info = (): React.ReactElement => {
   return (
     <Container>
       <div className={classes["add-info"]}>

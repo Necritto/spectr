@@ -11,31 +11,38 @@ import { NotFound } from "./pages/NotFound/NotFound";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { SearchResultsPage } from "./pages/SearchResultsPage/SearchResultsPage";
 import { SingleProductPage } from "./pages/SingleProductPage/SingleProductPage";
+import { SingleAreaPage } from "./pages/SingleAreaPage/SingleAreaPage";
 import { TeamPage } from "./pages/TeamPage/TeamPage";
 import { debounce } from "./utils/helpers/debounce";
+import { Context } from "./utils/context/context";
 import {
   IAreasData,
   IMainData,
   IProductData,
   ISearchData,
   ITeamData,
+  IAreaData,
+  INavNodes,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
-import { Context } from "./utils/context/context";
 
 const App = (): React.ReactElement => {
   const SWAP_HEADING: number = 980;
   const [windowWidth, setWindowWidth] = useState(0);
+
   const searchData: ISearchData = db.searchData;
   const productData: IProductData = db.productData;
   const areasData: ReadonlyArray<IAreasData> = db.areasData;
   const mainData: IMainData = db.mainData;
   const teamData: ReadonlyArray<ITeamData> = db.teamData;
+  const areaData: IAreaData = db.areaData;
+  const navData: INavNodes = db.navBarData;
 
   useEffect(() => {
     const handleResize = debounce(() => setWindowWidth(window.innerWidth), 200);
     window.addEventListener("DOMContentLoaded", handleResize);
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("DOMContentLoaded", handleResize);
       window.removeEventListener("resize", handleResize);
@@ -44,11 +51,7 @@ const App = (): React.ReactElement => {
 
   const routes: React.ReactElement = (
     <Switch>
-      <Route
-        path="/main"
-        exact
-        render={() => <MainPage mainData={mainData} />}
-      />
+      <Route path="/" exact render={() => <MainPage mainData={mainData} />} />
       <Route
         path="/products"
         exact
@@ -74,6 +77,10 @@ const App = (): React.ReactElement => {
         render={() => <SingleProductPage productData={productData} />}
       />
       <Route
+        path="/areas/:area"
+        render={() => <SingleAreaPage areaData={areaData} />}
+      />
+      <Route
         path="/team"
         exact
         render={() => <TeamPage teamData={teamData} />}
@@ -86,7 +93,7 @@ const App = (): React.ReactElement => {
 
   return (
     <Context.Provider value={{ SWAP_HEADING, windowWidth }}>
-      <Layout>{routes}</Layout>
+      <Layout navData={navData}>{routes}</Layout>
     </Context.Provider>
   );
 };

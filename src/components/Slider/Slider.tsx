@@ -11,7 +11,7 @@ type SliderProps = {
   readonly data: ISliderData;
 };
 
-export const Slider = ({ data }: SliderProps) => {
+export const Slider = ({ data }: SliderProps): React.ReactElement => {
   const [x, setX] = useState(0);
   let prettyX: number = (x * -1) / 100;
 

@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
 declare type PortalProps = {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 };
 
-export const Portal = ({ children }: PortalProps) => {
+export const Portal = ({ children }: PortalProps): React.ReactElement => {
   const el: HTMLDivElement = document.createElement("div");
 
   useEffect(() => {

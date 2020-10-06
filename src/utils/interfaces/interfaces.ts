@@ -19,10 +19,33 @@ type ArticleData = {
   readonly similarProducts: ReadonlyArray<IProductsData>;
 };
 
-type Node = {
+type DocsLink = {
+  readonly id: number;
+  readonly link: string;
+  readonly title: string;
+};
+
+type Standarts = {
   readonly id: number;
   readonly title: string;
-  readonly body: string;
+  readonly descr: ReadonlyArray<string>;
+  readonly descr_item?: ReadonlyArray<string>;
+  readonly descr_imgs?: ReadonlyArray<string>;
+};
+
+type NavNode = {
+  readonly id: number;
+  readonly title: string;
+  readonly route: string;
+  readonly type?: string;
+  readonly nodes?: ReadonlyArray<Route>;
+};
+
+type Route = {
+  readonly id: number;
+  readonly title: string;
+  readonly route: string;
+  readonly type: string;
 };
 
 // Interfaces
@@ -65,7 +88,7 @@ export interface IAreasData {
 }
 
 export interface ISliderData {
-  readonly nodes: ReadonlyArray<Node>;
+  readonly nodes: ReadonlyArray<INode>;
 }
 
 export interface IMainData {
@@ -95,4 +118,35 @@ export interface ITeamData {
   readonly position: string;
   readonly descr: string;
   readonly interests?: string;
+}
+
+export interface IAreaData {
+  readonly id: number;
+  readonly theme_article: string;
+  readonly small_descr: string;
+  readonly imgUrl: string;
+  readonly descr: ReadonlyArray<string>;
+  readonly descr_tasks: ReadonlyArray<string>;
+  readonly docsLinks: ReadonlyArray<DocsLink>;
+  readonly standarts_predescr: string;
+  readonly standarts: ReadonlyArray<Standarts>;
+  readonly area_products: ReadonlyArray<IProductsData>;
+}
+
+export interface INavNodes {
+  readonly nodes: ReadonlyArray<NavNode>;
+}
+
+export interface IPaginationData {
+  readonly id: number;
+  readonly imgUrl: string;
+  readonly title: string;
+  readonly descr?: string;
+  readonly date?: string;
+}
+
+export interface INode {
+  readonly id: number;
+  readonly title: string;
+  readonly body: string;
 }

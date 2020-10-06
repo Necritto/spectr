@@ -3,10 +3,9 @@ import classes from "./NavbarItem.module.scss";
 
 import classnames from "classnames";
 import { Link } from "react-router-dom";
+import { INavNodes } from "../../../utils/interfaces/interfaces";
 
-import { Nodes } from "../Navbar";
-
-export const NavbarItem = ({ nodes }: Nodes) => {
+export const NavbarItem = ({ nodes }: INavNodes): React.ReactElement => {
   return (
     <ul
       className={classnames(classes["inner-menu"], {

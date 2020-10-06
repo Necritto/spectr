@@ -2,17 +2,17 @@ import React from "react";
 import classes from "./SliderItem.module.scss";
 
 import { Button } from "../../UI/Button/Button";
+import { INode } from "../../../utils/interfaces/interfaces";
 
 type SliderItemProps = {
-  data: {
-    id: number;
-    title: string;
-    body: string;
-  };
-  x?: number;
+  readonly data: INode;
+  readonly x?: number;
 };
 
-export const SliderItem = ({ data, x }: SliderItemProps) => {
+export const SliderItem = ({
+  data,
+  x,
+}: SliderItemProps): React.ReactElement => {
   return (
     <div
       className={classes.sliderItem}

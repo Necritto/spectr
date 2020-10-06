@@ -10,7 +10,7 @@ type CarouselProps = {
   readonly data: ReadonlyArray<IProductsData>;
 };
 
-export const Carousel = ({ data }: CarouselProps) => {
+export const Carousel = ({ data }: CarouselProps): React.ReactElement => {
   const [cards, setCards] = useState(data);
 
   const slideRight = (): void => {
