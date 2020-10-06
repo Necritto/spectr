@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Button.module.scss";
 
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 import timesSvg from "../../../assets/img/svg/times.svg";
 
@@ -14,6 +15,7 @@ type ButtonProps = {
   readonly onShow?: () => void;
   readonly onClose?: () => void;
   readonly onSubmit?: () => void;
+  readonly route?: string;
 };
 
 export const Button = ({
@@ -25,6 +27,7 @@ export const Button = ({
   onShow,
   onClose,
   onSubmit,
+  route,
 }: ButtonProps): React.ReactElement => {
   return (
     <button
@@ -38,7 +41,8 @@ export const Button = ({
       onSubmit={onSubmit}
     >
       {isTimes && <img src={timesSvg} alt="&times;" />}
-      {!isTimes && value}
+      {!route && !isTimes && value}
+      {!isTimes && value && route && <Link to={route}>{value}</Link>}
     </button>
   );
 };

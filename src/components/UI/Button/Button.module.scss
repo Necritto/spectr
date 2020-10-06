@@ -8,6 +8,25 @@
   text-transform: uppercase;
   color: #ffffff;
   cursor: pointer;
+  position: relative;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+    }
+  }
 
   &-primary {
     background: #d83933;
@@ -16,6 +35,10 @@
   &-cancel {
     background: #f6f6f6;
     color: #2e2e2e;
+
+    a {
+      color: #2e2e2e;
+    }
   }
 
   &-times {

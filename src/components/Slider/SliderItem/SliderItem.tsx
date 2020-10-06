@@ -21,7 +21,7 @@ export const SliderItem = ({
       <h1>{data.title}</h1>
       <p>{data.body}</p>
       <div className={classes.sliderItem__btn}>
-        <Button value={"Смотреть продукцию"} isPrimary />
+        <Button value={"Смотреть продукцию"} route={"/products"} isPrimary />
       </div>
     </div>
   );

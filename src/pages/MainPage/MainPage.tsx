@@ -69,7 +69,7 @@ export const MainPage = ({ mainData }: MainPageProps) => {
           </Container>
         </div>
         <div className={classes.news__btn}>
-          <Button value={"Все новости"} />
+          <Button value={"Все новости"} route={"/news"} />
         </div>
       </section>
       <section className={classes["map-section"]}>
