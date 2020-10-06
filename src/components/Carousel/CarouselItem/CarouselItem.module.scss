@@ -7,6 +7,12 @@
   &:last-child {
     margin-right: 0;
   }
+
+  a {
+    display: flex;
+    width: inherit;
+    height: inherit;
+  }
 }
 
 .card__img {
@@ -15,6 +21,7 @@
   height: 208px;
 
   img {
+    flex: 1 1;
     min-width: inherit;
     height: inherit;
   }
