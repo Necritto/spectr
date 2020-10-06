@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { Context } from "../../utils/context/context";
+import { ScrollToTop } from "../../utils/helpers/ScrollToTop";
 import { INavNodes } from "../../utils/interfaces/interfaces";
 
 type LayoutProps = {
@@ -42,6 +43,7 @@ export const Layout = ({ children, navData, burgerNavData }: LayoutProps) => {
 
   return (
     <>
+      <ScrollToTop />
       <Header
         isOpenModal={isOpenModal}
         isOpenSearch={isOpenSearch}
