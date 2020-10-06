@@ -587,5 +587,175 @@
         "descr": "Микроскоп комбинационного рассеяния (Раман)"
       }
     ]
+  },
+  "navBarData": {
+    "nodes": [
+      {
+        "id": 1,
+        "route": "/",
+        "title": "Главная"
+      },
+      {
+        "id": 2,
+        "route": "/products",
+        "title": "Продукция",
+        "type": "prod_nodes",
+        "nodes": [
+          {
+            "id": 1779,
+            "route": "r532",
+            "title": "ИнСпектр R532",
+            "type": "prod_nodes"
+          },
+          {
+            "id": 179,
+            "route": "m532",
+            "title": "РамМикс М532",
+            "type": "prod_nodes"
+          },
+          {
+            "id": 98,
+            "route": "sersp",
+            "title": "SERS подложки",
+            "type": "prod_nodes"
+          },
+          {
+            "id": 991,
+            "route": "diff",
+            "title": "Разделитель смесей",
+            "type": "prod_nodes"
+          },
+          {
+            "id": 123,
+            "route": "l405",
+            "title": "ИнСпектр L405",
+            "type": "prod_nodes"
+          },
+          {
+            "id": 1674,
+            "route": "f1200",
+            "title": "ИнСпектр F1200®",
+            "type": "prod_nodes"
+          },
+          {
+            "id": 251,
+            "route": "software",
+            "title": "Программное обеспечение",
+            "type": "prod_nodes"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "route": "/areas",
+        "title": "Области применения",
+        "type": "areas_nodes",
+        "nodes": [
+          {
+            "id": 581,
+            "route": "biotech",
+            "title": "Биотехнологии",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 10000000,
+            "route": "lowkp",
+            "title": "Низкочастотная КР-спектроскопия",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 154869,
+            "route": "learnkp",
+            "title": "Обучение КР-спектроскопии",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 15467,
+            "route": "sers",
+            "title": "SERS-аналитика",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 1879,
+            "route": "spectr",
+            "title": "Спектральные маркеры",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 4671,
+            "route": "pharma",
+            "title": "Фармацевтика",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 1345,
+            "route": "gemmol",
+            "title": "Геммология",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 71,
+            "route": "geolog",
+            "title": "Геология",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 1456,
+            "route": "crime",
+            "title": "Криминалистика",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 1678,
+            "route": "chimic",
+            "title": "Химия",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 45641,
+            "route": "med",
+            "title": "Медицина",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 4564561,
+            "route": "halphpr",
+            "title": "Полупроводники",
+            "type": "areas_nodes"
+          },
+          {
+            "id": 1234234,
+            "route": "art",
+            "title": "Искусство",
+            "type": "areas_nodes"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "route": "/news",
+        "title": "Новости"
+      },
+      {
+        "id": 5,
+        "route": "/team",
+        "title": "О компании",
+        "type": "company_nodes",
+        "nodes": [
+          {
+            "id": 1345,
+            "route": "/team",
+            "title": "Команда",
+            "type": "company_nodes"
+          },
+          {
+            "id": 1213,
+            "route": "/contacts",
+            "title": "Контакты",
+            "type": "company_nodes"
+          }
+        ]
+      }
+    ]
   }
 }

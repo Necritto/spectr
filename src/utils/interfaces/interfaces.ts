@@ -39,6 +39,21 @@ type Standarts = {
   readonly descr_imgs?: ReadonlyArray<string>;
 };
 
+type NavNode = {
+  readonly id: number;
+  readonly title: string;
+  readonly route: string;
+  readonly type?: string;
+  readonly nodes?: ReadonlyArray<Route>;
+};
+
+type Route = {
+  readonly id: number;
+  readonly title: string;
+  readonly route: string;
+  readonly type: string;
+};
+
 // Interfaces
 
 export interface ISwapHeading {
@@ -122,4 +137,8 @@ export interface IAreaData {
   readonly standarts_predescr: string;
   readonly standarts: ReadonlyArray<Standarts>;
   readonly area_products: ReadonlyArray<IProductsData>;
+}
+
+export interface INavNodes {
+  readonly nodes: ReadonlyArray<NavNode>;
 }

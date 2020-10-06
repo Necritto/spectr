@@ -4,54 +4,23 @@ import classes from "./BurgerMenu.module.scss";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 
-import { Nodes } from "../../Navbar/Navbar";
 import { Button } from "../Button/Button";
+import { INavNodes } from "../../../utils/interfaces/interfaces";
 
 type BurgerMenuProps = {
   onCloseBurgerMenu: () => void;
+  navData: INavNodes;
 };
 
-export const BurgerMenu = ({ onCloseBurgerMenu }: BurgerMenuProps) => {
-  const data: Nodes = {
-    nodes: [
-      {
-        id: 1,
-        route: "main",
-        title: "Главная",
-      },
-      {
-        id: 2,
-        route: "products",
-        title: "Продукция",
-      },
-      {
-        id: 3,
-        route: "areas",
-        title: "Области применения",
-      },
-      {
-        id: 4,
-        route: "news",
-        title: "Новости",
-      },
-      {
-        id: 5,
-        route: "team",
-        title: "Команда",
-      },
-      {
-        id: 6,
-        route: "contacts",
-        title: "Контакты",
-      },
-    ],
-  };
-
+export const BurgerMenu = ({
+  onCloseBurgerMenu,
+  navData,
+}: BurgerMenuProps): React.ReactElement => {
   return (
     <div className={classes["burger-wrap"]}>
       <nav className={classes["burger-menu"]}>
         <ul>
-          {data.nodes.map((node) => (
+          {navData.nodes.map((node) => (
             <li
               key={node.id}
               className={classnames({ [classes.active]: node.id === 1 })}

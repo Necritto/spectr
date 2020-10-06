@@ -20,6 +20,7 @@ import {
   ISearchData,
   ITeamData,
   IAreaData,
+  INavNodes,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
 import { Context } from "./utils/context/context";
@@ -34,6 +35,7 @@ const App = (): React.ReactElement => {
   const mainData: IMainData = db.mainData;
   const teamData: ReadonlyArray<ITeamData> = db.teamData;
   const areaData: IAreaData = db.areaData;
+  const navData: INavNodes = db.navBarData;
 
   useEffect(() => {
     const handleResize = debounce(() => setWindowWidth(window.innerWidth), 200);
@@ -47,11 +49,7 @@ const App = (): React.ReactElement => {
 
   const routes: React.ReactElement = (
     <Switch>
-      <Route
-        path="/main"
-        exact
-        render={() => <MainPage mainData={mainData} />}
-      />
+      <Route path="/" exact render={() => <MainPage mainData={mainData} />} />
       <Route
         path="/products"
         exact
@@ -93,7 +91,7 @@ const App = (): React.ReactElement => {
 
   return (
     <Context.Provider value={{ SWAP_HEADING, windowWidth }}>
-      <Layout>{routes}</Layout>
+      <Layout navData={navData}>{routes}</Layout>
     </Context.Provider>
   );
 };

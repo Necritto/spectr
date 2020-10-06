@@ -5,12 +5,14 @@ import { useHistory } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { Context } from "../../utils/context/context";
+import { INavNodes } from "../../utils/interfaces/interfaces";
 
 type LayoutProps = {
   children: React.ReactNode;
+  navData: INavNodes;
 };
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children, navData }: LayoutProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
@@ -40,11 +42,9 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header
-        SWAP_HEADING={SWAP_HEADING}
         isOpenModal={isOpenModal}
         isOpenSearch={isOpenSearch}
         isOpenBurgerMenu={isOpenBurgerMenu}
-        windowWidth={windowWidth}
         showModal={showModal}
         closeModal={closeModal}
         submitModalHandler={submitModalHandler}
@@ -52,6 +52,7 @@ export const Layout = ({ children }: LayoutProps) => {
         submitSearchHandler={submitSearchHandler}
         showBurgerMenu={showBurgerMenu}
         closeBurgerMenu={closeBurgerMenu}
+        navData={navData}
       />
       <>{children}</>
       <Footer />

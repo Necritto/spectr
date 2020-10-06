@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Header.module.scss";
 
 import { Logo } from "../Logo/Logo";
@@ -8,10 +8,11 @@ import { Portal } from "../../utils/Portal/Portal";
 import { Modal } from "../UI/Modal/Modal";
 import { Search } from "../UI/Search/Search";
 import { BurgerMenu } from "../UI/BurgerMenu/BurgerMenu";
-import { ISwapHeading } from "../../utils/interfaces/interfaces";
+import { INavNodes, ISwapHeading } from "../../utils/interfaces/interfaces";
 import { Container } from "../../hoc/Container/Container";
+import { Context } from "../../utils/context/context";
 
-interface HeaderProps extends ISwapHeading {
+type HeaderProps = {
   isOpenModal: boolean;
   isOpenSearch: boolean;
   isOpenBurgerMenu: boolean;
@@ -22,14 +23,13 @@ interface HeaderProps extends ISwapHeading {
   submitSearchHandler: () => void;
   showBurgerMenu: () => void;
   closeBurgerMenu: () => void;
-}
+  navData: INavNodes;
+};
 
 export const Header = ({
-  SWAP_HEADING,
   isOpenModal,
   isOpenSearch,
   isOpenBurgerMenu,
-  windowWidth,
   showModal,
   closeModal,
   submitModalHandler,
@@ -37,7 +37,10 @@ export const Header = ({
   submitSearchHandler,
   showBurgerMenu,
   closeBurgerMenu,
+  navData,
 }: HeaderProps) => {
+  const { SWAP_HEADING, windowWidth } = useContext(Context);
+
   return (
     <header className={classes.header}>
       <Container>
@@ -48,7 +51,7 @@ export const Header = ({
               {isOpenSearch ? (
                 <Search onClick={submitSearchHandler} />
               ) : (
-                <Navbar />
+                <Navbar navData={navData} />
               )}
               <Additional
                 onShowModal={showModal}
@@ -63,7 +66,10 @@ export const Header = ({
                 <Search onClick={submitSearchHandler} isSearchModal />
               )}
               {isOpenBurgerMenu && (
-                <BurgerMenu onCloseBurgerMenu={closeBurgerMenu} />
+                <BurgerMenu
+                  onCloseBurgerMenu={closeBurgerMenu}
+                  navData={navData}
+                />
               )}
               <Additional
                 onShowModal={showModal}
