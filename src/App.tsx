@@ -39,6 +39,7 @@ const App = (): React.ReactElement => {
   const teamData: ReadonlyArray<ITeamData> = db.teamData;
   const areaData: IAreaData = db.areaData;
   const navData: INavNodes = db.navBarData;
+  const burgerNavData: INavNodes = db.burgerNavData;
   const newData: INewData = db.newData;
 
   useEffect(() => {
@@ -101,7 +102,9 @@ const App = (): React.ReactElement => {
 
   return (
     <Context.Provider value={{ SWAP_HEADING, windowWidth }}>
-      <Layout navData={navData}>{routes}</Layout>
+      <Layout navData={navData} burgerNavData={burgerNavData}>
+        {routes}
+      </Layout>
     </Context.Provider>
   );
 };
