@@ -4,8 +4,8 @@
   flex-basis: 50%;
   margin-bottom: 25px;
 
-  &:nth-child(even) {
-    justify-content: flex-end;
+  a {
+    display: flex;
   }
 }
 

@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./CarouselItem.module.scss";
 
+import { Link } from "react-router-dom";
+
 import { IProductsData } from "../../../utils/interfaces/interfaces";
 
 type CarouselItemProps = {
@@ -13,7 +15,9 @@ export const CarouselItem = ({
   return (
     <div className={classes.carousel__item}>
       <div className={classes.card__img}>
-        <img src={card.imgUrl} alt={card.title} />
+        <Link to={`/products/${card.title}`}>
+          <img src={card.imgUrl} alt={card.title} />
+        </Link>
       </div>
       <div className={classes.card__desc}>
         <h5>{card.title}</h5>

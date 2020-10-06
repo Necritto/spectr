@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./Footer.module.scss";
 
+import { Link } from "react-router-dom";
+
 import youtubeSvg from "../../assets/img/svg/youtube.svg";
 import linkedinSvg from "../../assets/img/svg/linkedin.svg";
 import cronSvg from "../../assets/img/svg/cronlogo.svg";
@@ -17,13 +19,7 @@ export const Footer = (): React.ReactElement => {
             ком. 215
           </p>
           <span className={classes.map}>
-            <a
-              href="https://yandex.ru/maps/?ll=37.711407%2C55.677881&z=9.81"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Смотреть на карте{" "}
-            </a>
+            <Link to={"/contacts"}>Смотреть на карте </Link>
           </span>
           <div className={classes.tel}>
             <a href="tel:+74965224044">+7 (49652) 240-44</a>
@@ -36,9 +32,7 @@ export const Footer = (): React.ReactElement => {
         <div className={classes.footer__bottom}>
           <div className={classes.info}>
             <p>ООО «Спектр-М» &copy; 2019</p>
-            <a href="/confident" target="_blank" rel="noopener noreferrer">
-              Политика конфиденциальности
-            </a>
+            <Link to="/confident">Политика конфиденциальности</Link>
           </div>
           <div className={classes.links}>
             <div className={classes.social}>

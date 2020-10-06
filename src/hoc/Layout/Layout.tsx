@@ -5,14 +5,16 @@ import { useHistory } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { Context } from "../../utils/context/context";
+import { ScrollToTop } from "../../utils/helpers/ScrollToTop";
 import { INavNodes } from "../../utils/interfaces/interfaces";
 
 type LayoutProps = {
   readonly children: React.ReactNode;
   readonly navData: INavNodes;
+  readonly burgerNavData: INavNodes;
 };
 
-export const Layout = ({ children, navData }: LayoutProps) => {
+export const Layout = ({ children, navData, burgerNavData }: LayoutProps) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
@@ -41,6 +43,7 @@ export const Layout = ({ children, navData }: LayoutProps) => {
 
   return (
     <>
+      <ScrollToTop />
       <Header
         isOpenModal={isOpenModal}
         isOpenSearch={isOpenSearch}
@@ -53,6 +56,7 @@ export const Layout = ({ children, navData }: LayoutProps) => {
         showBurgerMenu={showBurgerMenu}
         closeBurgerMenu={closeBurgerMenu}
         navData={navData}
+        burgerNavData={burgerNavData}
       />
       <>{children}</>
       <Footer />

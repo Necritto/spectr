@@ -82,7 +82,7 @@ export const SingleProductPage = ({
             </h1>
             <p>{productDescr}</p>
             <div className={classes.buy__btn}>
-              <Button isPrimary value={"Заказать"} />
+              <Button isPrimary value={"Заказать"} route={"/buy"} />
             </div>
           </div>
         </Container>
@@ -96,7 +96,7 @@ export const SingleProductPage = ({
           <div className={classes["content-wrap"]}>
             <aside>
               <div className={classes.back__btn}>
-                <Button isCancel value={"Назад к списку"} />
+                <Button isCancel value={"Назад к списку"} route={"/products"} />
               </div>
               <nav>
                 <ol>
@@ -109,7 +109,7 @@ export const SingleProductPage = ({
                 </ol>
               </nav>
               <div className={classes.buy__btn}>
-                <Button value={"Заказать"} />
+                <Button value={"Заказать"} route={"/buy"} />
               </div>
             </aside>
             <article className={classes.article}>
@@ -175,7 +175,7 @@ export const SingleProductPage = ({
               <Table tableData={tableData} />
             </div>
             <div className={classes.buy__btn}>
-              <Button value={"Заказать"} />
+              <Button value={"Заказать"} route={"/buy"} />
             </div>
           </section>
           <Line />

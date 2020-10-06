@@ -25,7 +25,9 @@ export const BurgerMenu = ({
               key={node.id}
               className={classnames({ [classes.active]: node.id === 1 })}
             >
-              <Link to={node.route}>{node.title}</Link>
+              <Link onClick={onCloseBurgerMenu} to={node.route}>
+                {node.title}
+              </Link>
             </li>
           ))}
         </ul>

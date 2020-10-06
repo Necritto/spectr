@@ -48,7 +48,7 @@ export const Carousel = ({ data }: CarouselProps): React.ReactElement => {
         ))}
       </div>
       <div className={classes.carousel__footer}>
-        <Button value={"Смотреть все товары"} />
+        <Button value={"Смотреть все товары"} route={"/products"} />
       </div>
     </div>
   );

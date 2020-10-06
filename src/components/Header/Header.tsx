@@ -24,6 +24,7 @@ type HeaderProps = {
   readonly showBurgerMenu: () => void;
   readonly closeBurgerMenu: () => void;
   readonly navData: INavNodes;
+  readonly burgerNavData: INavNodes;
 };
 
 export const Header = ({
@@ -38,6 +39,7 @@ export const Header = ({
   showBurgerMenu,
   closeBurgerMenu,
   navData,
+  burgerNavData,
 }: HeaderProps): React.ReactElement => {
   const { SWAP_HEADING, windowWidth } = useContext(Context);
 
@@ -68,7 +70,7 @@ export const Header = ({
               {isOpenBurgerMenu && (
                 <BurgerMenu
                   onCloseBurgerMenu={closeBurgerMenu}
-                  navData={navData}
+                  navData={burgerNavData}
                 />
               )}
               <Additional

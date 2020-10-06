@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./PaginationItem.module.scss";
 
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 import { IPaginationData } from "../../../utils/interfaces/interfaces";
 
@@ -14,6 +15,10 @@ export const PaginationItem = ({
   pageData,
   isNews,
 }: PaginationItemProps): React.ReactElement => {
+  let route: string = isNews
+    ? `/news/${pageData.id}`
+    : `/products/${pageData.title}`;
+
   return (
     <div
       className={classnames(classes.pagination__item, {
@@ -21,7 +26,9 @@ export const PaginationItem = ({
       })}
     >
       <div className={classes.pagination__img}>
-        <img src={pageData.imgUrl} alt={pageData.title} />
+        <Link to={route}>
+          <img src={pageData.imgUrl} alt={pageData.title} />
+        </Link>
       </div>
       <div className={classes.pagination__desc}>
         {isNews && <span>{pageData.date}</span>}
