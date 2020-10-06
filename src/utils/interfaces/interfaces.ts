@@ -25,6 +25,20 @@ type Node = {
   readonly body: string;
 };
 
+type DocsLink = {
+  readonly id: number;
+  readonly link: string;
+  readonly title: string;
+};
+
+type Standarts = {
+  readonly id: number;
+  readonly title: string;
+  readonly descr: ReadonlyArray<string>;
+  readonly descr_item?: ReadonlyArray<string>;
+  readonly descr_imgs?: ReadonlyArray<string>;
+};
+
 // Interfaces
 
 export interface ISwapHeading {
@@ -95,4 +109,17 @@ export interface ITeamData {
   readonly position: string;
   readonly descr: string;
   readonly interests?: string;
+}
+
+export interface IAreaData {
+  readonly id: number;
+  readonly theme_article: string;
+  readonly small_descr: string;
+  readonly imgUrl: string;
+  readonly descr: ReadonlyArray<string>;
+  readonly descr_tasks: ReadonlyArray<string>;
+  readonly docsLinks: ReadonlyArray<DocsLink>;
+  readonly standarts_predescr: string;
+  readonly standarts: ReadonlyArray<Standarts>;
+  readonly area_products: ReadonlyArray<IProductsData>;
 }

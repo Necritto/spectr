@@ -19,9 +19,11 @@ import {
   IProductData,
   ISearchData,
   ITeamData,
+  IAreaData,
 } from "./utils/interfaces/interfaces";
 import db from "./db/db.json";
 import { Context } from "./utils/context/context";
+import { SingleAreaPage } from "./pages/SingleAreaPage/SingleAreaPage";
 
 const App = (): React.ReactElement => {
   const SWAP_HEADING: number = 980;
@@ -31,6 +33,7 @@ const App = (): React.ReactElement => {
   const areasData: ReadonlyArray<IAreasData> = db.areasData;
   const mainData: IMainData = db.mainData;
   const teamData: ReadonlyArray<ITeamData> = db.teamData;
+  const areaData: IAreaData = db.areaData;
 
   useEffect(() => {
     const handleResize = debounce(() => setWindowWidth(window.innerWidth), 200);
@@ -72,6 +75,10 @@ const App = (): React.ReactElement => {
       <Route
         path="/products/:product"
         render={() => <SingleProductPage productData={productData} />}
+      />
+      <Route
+        path="/areas/:area"
+        render={() => <SingleAreaPage areaData={areaData} />}
       />
       <Route
         path="/team"
