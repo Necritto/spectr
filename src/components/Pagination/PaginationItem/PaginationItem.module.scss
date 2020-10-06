@@ -1,0 +1,131 @@
+.pagination__item {
+  display: flex;
+  align-items: center;
+  flex-basis: 48.4%;
+  margin-bottom: 32px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.24);
+
+  a {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+
+  &-news {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 30%;
+    box-shadow: none;
+    height: 370px;
+    margin-bottom: 10px;
+
+    .pagination__img {
+      width: 100%;
+      height: 240px;
+      flex: 0 0;
+
+      img {
+        object-fit: fill;
+      }
+    }
+
+    .pagination__desc {
+      padding: 0;
+
+      h5 {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 28px;
+      }
+
+      span {
+        display: inline-block;
+        margin: 16px 0 8px 0;
+        font-size: 12.5px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        color: #5c5c5c;
+      }
+    }
+  }
+}
+
+.pagination__img {
+  background: linear-gradient(45deg, #252525, #e7e1e1);
+  width: 280px;
+  height: 200px;
+  flex-shrink: 0;
+
+  img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}
+
+.pagination__desc {
+  padding: 24px;
+  background-color: #ffffff;
+
+  h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 24px;
+    color: #757575;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pagination__item {
+    flex-basis: 31%;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 24px;
+
+    &:nth-child(2) {
+      margin: 0 24px 24px 24px;
+    }
+
+    &:nth-child(5) {
+      margin: 0 24px 24px 24px;
+    }
+  }
+
+  .pagination__img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 980px) {
+  .pagination__item {
+    flex-basis: 45%;
+
+    &:nth-child(2) {
+      margin: 0;
+      margin-bottom: 24px;
+    }
+
+    &:nth-child(5) {
+      margin: 0;
+      margin-bottom: 24px;
+    }
+
+    &-news {
+      margin-bottom: 16px;
+    }
+  }
+
+  .pagination__desc {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 640px) {
+  .pagination__item {
+    flex-basis: 90%;
+  }
+}

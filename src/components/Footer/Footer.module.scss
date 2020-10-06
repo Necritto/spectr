@@ -1,0 +1,156 @@
+.footer {
+  background: #2e2e2e;
+}
+
+.footer__top,
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__top {
+  padding: 64px 0 32px 0;
+
+  .map {
+    display: none;
+  }
+
+  p,
+  a {
+    font-size: 18px;
+    line-height: 28px;
+    color: #ffffff;
+  }
+
+  a:last-of-type {
+    text-decoration: underline;
+  }
+}
+
+.footer__bottom {
+  padding: 32px 0 64px 0;
+
+  .info {
+    display: flex;
+
+    p,
+    a {
+      font-size: 15px;
+      line-height: 24px;
+      color: #757575;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    p {
+      margin-right: 32px;
+    }
+  }
+
+  .links {
+    display: flex;
+
+    .social {
+      width: 56px;
+      display: flex;
+      margin-right: 28px;
+
+      a {
+        width: 24px;
+        height: 24px;
+
+        &:first-of-type {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer__top {
+    text-align: center;
+
+    p {
+      flex-basis: 100%;
+    }
+
+    .tel,
+    .email {
+      &:first-of-type {
+        text-align: right;
+      }
+
+      &:last-of-type {
+        text-align: left;
+      }
+
+      margin-top: 32px;
+      flex-basis: 45%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__top,
+  .footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer__top {
+    p {
+      max-width: 310px;
+    }
+
+    .map {
+      display: block;
+      margin-top: 24px;
+
+      a {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    a {
+      font-weight: bold;
+      font-size: 25.6289px;
+      line-height: 36px;
+    }
+  }
+
+  .footer__bottom {
+    text-align: center;
+
+    .info {
+      flex-direction: column;
+
+      p {
+        margin: 0 0 16px 0;
+      }
+    }
+
+    .links {
+      flex-direction: column;
+
+      .social {
+        width: 112px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-around;
+
+        a {
+          margin-right: 0;
+          transform: scale(2);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.heading {
+  background: url("../../assets/img/svg/decor_triangles.svg") top no-repeat;
+  background-size: cover;
+  padding: 64px 0;
+  display: flex;
+  justify-content: center;
+
+  .heading__wrap {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 44.7898px;
+    line-height: 52px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 21.6px;
+    line-height: 36px;
+  }
+}
+
+.products {
+  margin-bottom: 128px;
+}
+
+@media (max-width: 980px) {
+  .heading {
+    text-align: center;
+    padding: 48px 0;
+
+    .heading__wrap {
+      flex-basis: 100%;
+    }
+
+    h1 {
+      font-size: 32.4348px;
+      line-height: 40px;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 20.25px;
+      line-height: 32px;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .heading {
+    background: none;
+  }
+
+  .products {
+    margin-bottom: 96px;
+  }
+}
